@@ -1,4 +1,3 @@
-import { number } from 'prop-types';
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
@@ -8,9 +7,9 @@ export default function Table() {
 
   const [searchName, setSearchName] = useState('');
   const [filter, setFilter] = useState({
-    colum: 'rotation_period',
+    colum: 'population',
     comparison: 'maior que',
-    number: 0,
+    number: '0',
   });
   const [selectedFilters, setSelFilters] = useState([]);
 
@@ -27,9 +26,17 @@ export default function Table() {
     finalData = finalData.filter((line) => {
       const bools = [];
       selectedFilters.forEach((filterS) => {
-        bools.push(Number(line[filterS.colum]) === Number(filterS.number));
-        console.log(line);
+        if (filterS.comparison === 'igual a') {
+          return (bools.push(Number(line[filterS.colum]) === Number(filterS.number)));
+        }
+        if (filterS.comparison === 'maior que') {
+          return (bools.push(Number(line[filterS.colum]) > Number(filterS.number)));
+        }
+        if (filterS.comparison === 'menor que') {
+          return (bools.push(Number(line[filterS.colum]) < Number(filterS.number)));
+        }
       });
+      console.log(bools);
 
       return bools.every((el) => el);
     });
@@ -57,7 +64,7 @@ export default function Table() {
       <form>
         <label htmlFor="colum-filter">
           <select
-            data-testid="colum-filter"
+            data-testid="column-filter"
             name="colum-filter"
             value={ filter.colum }
             onChange={ ({ target }) => setFilter((prevFilter) => ({
@@ -93,7 +100,7 @@ export default function Table() {
             })) }
           >
             <option>maior que</option>
-            <option> menor que</option>
+            <option>menor que</option>
             <option>igual a</option>
           </select>
 
@@ -107,12 +114,12 @@ export default function Table() {
 
         >
           <input
-            name="number-filter"
+            data-testid="value-filter"
             type="number"
             onChange={ ({ target }) => setFilter((prevFilter) => ({
               ...prevFilter, number: target.value,
             })) }
-            value={ number.value }
+
           />
         </label>
 
@@ -128,7 +135,7 @@ export default function Table() {
             setFilter({
               colum: '',
               comparison: 'maior que',
-              number: 0,
+              number: '0',
             });
             // não reseta number no imput e so no state
           } }
