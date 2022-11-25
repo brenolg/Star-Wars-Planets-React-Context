@@ -1,17 +1,40 @@
 import { number } from 'prop-types';
-import { useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
 export default function Table() {
   const { data } = useContext(StarWarsContext);
+  const [filterData, setFilterData] = useState([]);
 
   const [searchName, setSearchName] = useState('');
   const [filter, setFilter] = useState({
-    colum: '',
+    colum: 'rotation_period',
     comparison: 'maior que',
     number: 0,
   });
   const [selectedFilters, setSelFilters] = useState([]);
+
+  useEffect(() => {
+    setFilterData(data);
+  }, [data]);
+
+  useEffect(() => {
+    let finalData = filterData;
+    finalData = finalData.filter((line) => (
+      line.name.toLowerCase().includes(searchName.toLowerCase())
+    ));
+
+    finalData = finalData.filter((line) => {
+      const bools = [];
+      selectedFilters.forEach((filterS) => {
+        bools.push(Number(line[filterS.colum]) === Number(filterS.number));
+        console.log(line);
+      });
+
+      return bools.every((el) => el);
+    });
+    setFilterData(finalData);
+  }, [filter, searchName]);
 
   return (
     <>
@@ -41,29 +64,19 @@ export default function Table() {
               ...prevFilter, colum: target.value,
             })) }
           >
-            <option
-              value="rotation_Period"
-            >
+            <option>
               rotation_period
             </option>
-            <option
-              value="orbital_period "
-            >
+            <option>
               orbital_period
             </option>
-            <option
-              value=" diameter "
-            >
+            <option>
               diameter
             </option>
-            <option
-              value=" surface_water "
-            >
+            <option>
               surface_water
             </option>
-            <option
-              value=" population "
-            >
+            <option>
               population
 
             </option>
@@ -117,6 +130,7 @@ export default function Table() {
               comparison: 'maior que',
               number: 0,
             });
+            // não reseta number no imput e so no state
           } }
         >
           FILTRAR
@@ -158,10 +172,7 @@ export default function Table() {
 
         <tbody>
 
-          {data
-            .filter((line) => (
-              line.name.toLowerCase().includes(searchName.toLowerCase())
-            ))
+          {filterData
 
             .map((planet) => (
               <tr key={ planet.name }>
@@ -174,9 +185,7 @@ export default function Table() {
                 <td>{planet.terrain}</td>
                 <td>{planet.surface_water}</td>
                 <td>{planet.population}</td>
-                <td>
-                  {planet.films.map((film, index) => <p key={ index }>{film}</p>)}
-                </td>
+                <td>{planet.films}</td>
                 <td>{planet.created}</td>
                 <td>{planet.edited}</td>
                 <td>{planet.url}</td>
