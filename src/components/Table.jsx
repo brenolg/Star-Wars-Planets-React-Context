@@ -7,9 +7,9 @@ export default function Table() {
 
   const [searchName, setSearchName] = useState('');
   const [filter, setFilter] = useState({
+    number: 0,
     colum: 'population',
     comparison: 'maior que',
-    number: '0',
   });
   const [selectedFilters, setSelFilters] = useState([]);
 
@@ -116,6 +116,7 @@ export default function Table() {
           <input
             data-testid="value-filter"
             type="number"
+            value={ filter.number }
             onChange={ ({ target }) => setFilter((prevFilter) => ({
               ...prevFilter, number: target.value,
             })) }
@@ -135,7 +136,7 @@ export default function Table() {
             setFilter({
               colum: '',
               comparison: 'maior que',
-              number: '0',
+              number: 0,
             });
             // não reseta number no imput e so no state
           } }
