@@ -5,6 +5,7 @@ import StarWarsContext from './StarWarsContext';
 
 export default function StarWarsProvider({ children }) {
   const [data, setData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
 
   useEffect(() => {
     async function fetch() {
@@ -13,9 +14,15 @@ export default function StarWarsProvider({ children }) {
     fetch();
   }, []);
 
+  useEffect(() => {
+    setFilterData(data);
+  }, [data]);
+
   const value = useMemo(() => ({
     data,
-  }), [data]);
+    filterData,
+    setFilterData,
+  }), [data, filterData, setFilterData]);
 
   return (
     <StarWarsContext.Provider value={ value }>
