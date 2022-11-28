@@ -42,12 +42,10 @@ export default function Table() {
     setFilterData(finalDataName);
   }, [searchName]);
 
-  // useEffect(() => {
-  //   setColumOptions(filterColumOptions[0]);
-  // }, [filterColumOptions]);
+  // filtra nome
 
   useEffect(() => {
-    if (selectedFilters) {
+    if (selectedFilters.length) {
       selectedFilters.forEach((selColum) => {
         const newOptions = columOptions.filter((option) => (
           option !== selColum.colum
@@ -61,12 +59,15 @@ export default function Table() {
         'orbital_period',
         'diameter',
         'surface_water',
-        'rotarion_period']);
+        'rotation_period']);
     }
   }, [selectedFilters]);
 
+  // permite somente uma coluna comparison
+
   useEffect(() => {
     let finalDataNumber = filterData;
+
     finalDataNumber = filterData.filter((line) => {
       const bools = [];
       selectedFilters.forEach((filterS) => {
@@ -86,6 +87,8 @@ export default function Table() {
     setFilterData(finalDataNumber);
   }, [filter]);
 
+  // filtra numeros
+
   return (
     <>
 
@@ -101,7 +104,7 @@ export default function Table() {
             onChange={ ({ target }) => setSearchName(target.value) }
             value={ searchName }
           />
-          {/* ({ target }) => setSearchName(target.value) */}
+
         </label>
       </form>
 
@@ -165,9 +168,9 @@ export default function Table() {
 
             ]));
             setFilter({
-              colum: '',
-              comparison: 'maior que',
               number: 0,
+              colum: 'population',
+              comparison: 'maior que',
             });
           } }
         >
@@ -188,6 +191,14 @@ export default function Table() {
           </button>
         </>
       ))}
+
+      <button
+        type="button"
+        onClick={ () => { setSelectedFilters([]); } }
+      >
+        Excluir Filtros
+
+      </button>
 
     </>
   );
