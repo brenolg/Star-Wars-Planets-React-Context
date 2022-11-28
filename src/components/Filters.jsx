@@ -4,6 +4,14 @@ import StarWarsContext from '../context/StarWarsContext';
 export default function Table() {
   const { filterData, setFilterData } = useContext(StarWarsContext);
 
+  const [columOptions, setColumOptions] = useState([
+    'population',
+    'orbital_period',
+    'diameter',
+    'surface_water',
+    'rotation_period',
+  ]);
+
   const [searchName, setSearchName] = useState('');
   const [filter, setFilter] = useState({
     number: 0,
@@ -23,13 +31,43 @@ export default function Table() {
   // };
 
   // filtro name so é chamado ao inserir caracteres no input
+
+  // comparison some pos clicar ... corrigir initial state pos clicar
   useEffect(() => {
-    let finalData = filterData;
-    finalData = finalData.filter((line) => (
+    let finalDataName = filterData;
+    finalDataName = filterData.filter((line) => (
       line.name.toLowerCase().includes(searchName.toLowerCase())
 
     ));
-    finalData = finalData.filter((line) => {
+    setFilterData(finalDataName);
+  }, [searchName]);
+
+  // useEffect(() => {
+  //   setColumOptions(filterColumOptions[0]);
+  // }, [filterColumOptions]);
+
+  useEffect(() => {
+    if (selectedFilters) {
+      selectedFilters.forEach((selColum) => {
+        const newOptions = columOptions.filter((option) => (
+          option !== selColum.colum
+
+        ));
+        setColumOptions(newOptions);
+      });
+    } else {
+      setColumOptions([
+        'population',
+        'orbital_period',
+        'diameter',
+        'surface_water',
+        'rotarion_period']);
+    }
+  }, [selectedFilters]);
+
+  useEffect(() => {
+    let finalDataNumber = filterData;
+    finalDataNumber = filterData.filter((line) => {
       const bools = [];
       selectedFilters.forEach((filterS) => {
         if (filterS.comparison === 'maior que') {
@@ -45,8 +83,8 @@ export default function Table() {
 
       return bools.every((el) => el);
     });
-    setFilterData(finalData);
-  }, [searchName, filter]);
+    setFilterData(finalDataNumber);
+  }, [filter]);
 
   return (
     <>
@@ -77,22 +115,9 @@ export default function Table() {
               ...prevFilter, colum: target.value,
             })) }
           >
-            <option>
-              rotation_period
-            </option>
-            <option>
-              orbital_period
-            </option>
-            <option>
-              diameter
-            </option>
-            <option>
-              surface_water
-            </option>
-            <option>
-              population
-
-            </option>
+            {columOptions.map((option, index) => (
+              <option key={ index }>{option}</option>
+            ))}
           </select>
         </label>
 
