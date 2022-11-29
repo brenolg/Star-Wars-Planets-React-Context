@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
 export default function Table() {
-  const { filterData, setFilterData } = useContext(StarWarsContext);
+  const { filterData, setFilterData, data } = useContext(StarWarsContext);
 
   const [columOptions, setColumOptions] = useState([
     'population',
@@ -34,8 +34,7 @@ export default function Table() {
 
   // comparison some pos clicar ... corrigir initial state pos clicar
   useEffect(() => {
-    let finalDataName = filterData;
-    finalDataName = filterData.filter((line) => (
+    const finalDataName = data.filter((line) => (
       line.name.toLowerCase().includes(searchName.toLowerCase())
 
     ));
@@ -65,7 +64,7 @@ export default function Table() {
 
   // permite somente uma coluna comparison
 
-  useEffect(() => {
+  const filterByNumber = () => {
     let finalDataNumber = filterData;
 
     finalDataNumber = filterData.filter((line) => {
@@ -85,9 +84,21 @@ export default function Table() {
       return bools.every((el) => el);
     });
     setFilterData(finalDataNumber);
-  }, [filter]);
+  };
+
+  useEffect(() => {
+    filterByNumber();
+  }, [filter, selectedFilters]);
 
   // filtra numeros
+
+  const handleDelete = ({ target }) => {
+    const newFilters = selectedFilters
+      .filter((filterDel) => target.name !== filterDel.colum);
+
+    setSelectedFilters(newFilters);
+    filterByNumber();
+  };
 
   return (
     <>
@@ -169,7 +180,7 @@ export default function Table() {
             ]));
             setFilter({
               number: 0,
-              colum: 'population',
+              colum: columOptions[0],
               comparison: 'maior que',
             });
           } }
@@ -181,11 +192,18 @@ export default function Table() {
 
       {selectedFilters.map((filters, index) => (
         <>
-          <p key={ index }>
+          <p
+            key={ index }
+            name={ index }
+          >
             {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
           </p>
           <button
+            data-testid='data-testid="filter"'
             type="button"
+            name={ filters.colum }
+            onClick={ handleDelete }
+
           >
             DEL
           </button>
@@ -193,8 +211,9 @@ export default function Table() {
       ))}
 
       <button
+        data-testid="button-remove-filters"
         type="button"
-        onClick={ () => { setSelectedFilters([]); } }
+        onClick={ () => { setSelectedFilters([]); filterByNumber(); } }
       >
         Excluir Filtros
 
