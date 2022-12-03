@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
-export default function Table() {
-  const { filterData, setFilterData, data } = useContext(StarWarsContext);
+export default function FiltersNumber() {
+  const { filterData, setFilterData } = useContext(StarWarsContext);
 
   const [columOptions, setColumOptions] = useState([
     'population',
@@ -12,36 +12,12 @@ export default function Table() {
     'rotation_period',
   ]);
 
-  const [searchName, setSearchName] = useState('');
   const [filter, setFilter] = useState({
     number: 0,
     colum: 'population',
     comparison: 'maior que',
   });
   const [selectedFilters, setSelectedFilters] = useState([]);
-
-  // const handleFilterName = ({ target: { value } }) => {
-  //   setSearchName(value);
-
-  //   let finalData = filterData;
-  //   finalData = finalData.filter((line) => (
-  //     line.name.toLowerCase().includes(searchName.toLowerCase())
-  //   ));
-  //   setFilterData(finalData);
-  // };
-
-  // filtro name so é chamado ao inserir caracteres no input
-
-  // comparison some pos clicar ... corrigir initial state pos clicar
-  useEffect(() => {
-    const finalDataName = data.filter((line) => (
-      line.name.toLowerCase().includes(searchName.toLowerCase())
-
-    ));
-    setFilterData(finalDataName);
-  }, [searchName]);
-
-  // filtra nome
 
   useEffect(() => {
     if (selectedFilters.length) {
@@ -102,22 +78,6 @@ export default function Table() {
 
   return (
     <>
-
-      <h1>Star Wars</h1>
-
-      <form>
-        <label htmlFor="name-filter">
-          <input
-            data-testid="name-filter"
-            name="name-filter"
-            type="text"
-            placeholder="Search by name"
-            onChange={ ({ target }) => setSearchName(target.value) }
-            value={ searchName }
-          />
-
-        </label>
-      </form>
 
       <form>
         <label htmlFor="colum-filter">

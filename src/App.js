@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import Table from './components/Table';
-import Filters from './components/Filters';
+import FiltersNumber from './components/FiltersNumber';
+import FilterName from './components/FilterName';
 
 function App() {
   return (
     <>
-      <Filters />
+      <FilterName />
+      <FiltersNumber />
       <Table />
     </>
   );

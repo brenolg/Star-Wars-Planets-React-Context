@@ -1,5 +1,5 @@
 const requestApi = async () => {
-  const endPoint = 'https://swapi.dev/api/planets';
+  const endPoint = 'https://swapi.py4e.com/api/planets';
   const response = await fetch(endPoint);
   const data = await response.json();
 
