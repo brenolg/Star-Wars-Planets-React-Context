@@ -14,7 +14,7 @@ export default function FiltersNumber() {
 
   const [filter, setFilter] = useState({
     number: 0,
-    colum: 'population',
+    colum: columOptions[0],
     comparison: 'maior que',
   });
   const [selectedFilters, setSelectedFilters] = useState([]);

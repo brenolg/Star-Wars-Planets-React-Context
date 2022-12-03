@@ -12,7 +12,7 @@ export default function FilterName() {
 
     ));
     setFilterData(finalDataName);
-  }, [searchName]);
+  }, [searchName, data, setFilterData]);
 
   // filtra nome
 
