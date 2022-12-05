@@ -18,9 +18,10 @@ export default function FiltersNumber() {
     comparison: 'maior que',
   });
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [filterDelete, setFilterDelete] = useState(1);
 
   useEffect(() => {
-    if (selectedFilters.length) {
+    if (selectedFilters.length > 1) {
       selectedFilters.forEach((selColum) => {
         const newOptions = columOptions.filter((option) => (
           option !== selColum.colum
@@ -36,7 +37,7 @@ export default function FiltersNumber() {
         'surface_water',
         'rotation_period']);
     }
-  }, [selectedFilters]);
+  }, [selectedFilters, filter]);
 
   // permite somente uma coluna comparison
 
@@ -64,16 +65,20 @@ export default function FiltersNumber() {
 
   useEffect(() => {
     filterByNumber();
-  }, [filter, selectedFilters]);
+  }, [filter, selectedFilters, filterDelete]);
 
   // filtra numeros
 
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
       .filter((filterDel) => target.name !== filterDel.colum);
+    filterByNumber();
 
     setSelectedFilters(newFilters);
-    filterByNumber();
+    setFilterDelete((prevDel) => ({
+      ...prevDel + filter.number,
+
+    }));
   };
 
   return (
@@ -84,7 +89,7 @@ export default function FiltersNumber() {
           <select
             data-testid="column-filter"
             name="colum-filter"
-            value={ filter.colum }
+            value={ columOptions[0] }
             onChange={ ({ target }) => setFilter((prevFilter) => ({
               ...prevFilter, colum: target.value,
             })) }
@@ -133,19 +138,19 @@ export default function FiltersNumber() {
           data-testid="button-filter"
           type="button"
           onClick={ () => {
+            setFilter({
+              number: filter.number,
+              colum: columOptions[0],
+              comparison: filter.comparison,
+            });
             setSelectedFilters((prevFilter) => ([
               ...prevFilter,
               filter,
 
             ]));
-            setFilter({
-              number: 0,
-              colum: columOptions[0],
-              comparison: 'maior que',
-            });
           } }
         >
-          FILTRAR
+          Filtrar
 
         </button>
       </form>

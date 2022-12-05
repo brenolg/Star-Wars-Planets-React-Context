@@ -1,8 +1,12 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
 export default function Table() {
   const { filterData } = useContext(StarWarsContext);
+
+  useEffect(() => {
+
+  }, [filterData]);
 
   return (
 
