@@ -22,7 +22,8 @@ describe('Teste FilterName', () => {
   const searchKamino = 'Kamino'
   userEvent.type(inputName, searchKamino)
 
-  await waitFor(() => expect(screen.getByText('Kamino')).toBeInTheDocument());
+  await waitFor(() =>
+  expect(screen.getByText('Kamino')).toBeInTheDocument());
 
 })
 });

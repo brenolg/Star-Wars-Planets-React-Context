@@ -18,10 +18,15 @@ export default function StarWarsProvider({ children }) {
     setFilterData(data);
   }, [data]);
 
+  const dataFunc = (newData) => {
+    setFilterData(newData);
+  };
+
   const value = useMemo(() => ({
     data,
     filterData,
     setFilterData,
+    dataFunc,
   }), [data, filterData, setFilterData]);
 
   return (

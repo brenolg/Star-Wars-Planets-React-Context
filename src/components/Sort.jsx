@@ -1,77 +1,77 @@
-// import { useEffect, useState, useContext } from 'react';
-// import StarWarsContext from '../context/StarWarsContext';
+import { useEffect, useState, useContext } from 'react';
+import StarWarsContext from '../context/StarWarsContext';
 
-// export default function Sort() {
-//   const { filterData, setFilterData } = useContext(StarWarsContext);
+export default function Sort() {
+  const { filterData, dataFunc } = useContext(StarWarsContext);
 
-//   useEffect(() => {
+  const [operator, setOperator] = useState('>');
+  const [columSort, setColumSort] = useState('population');
+  const [filterSort, setFilterSort] = useState([]);
 
-//   }, [filterData]);
+  useEffect(() => {
+    dataFunc(filterSort);
+  }, [filterSort]);
 
-//   const [operator, setOperator] = useState('');
-//   const [columSort, setColumSort] = useState('populations');
+  const handleSort = () => {
+    const unknowns = filterData.filter((planet) => planet[columSort] === 'unknown');
+    const knows = filterData.filter((planet) => planet[columSort] !== 'unknown');
 
-//   useEffect(() => {
-//     setFilterData(filterData);
-//   }, [filterData, setFilterData]);
+    knows.sort((a, b) => {
+      if (operator === '>') {
+        return Number(a[columSort]) - Number(b[columSort]);
+      }
+      return Number(b[columSort]) - Number(a[columSort]);
+    });
+    const newSort = [...knows, ...unknowns];
+    setFilterSort(newSort);
+    console.log(newSort);
+  };
 
-//   const handleSort = () => {
-//     const newSort = filterData.sort((a, b) => {
-//       if (operator === '>') {
-//         return Number(a[columSort]) - Number(b[columSort]);
-//       }
-//       return Number(b[columSort]) - Number(a[columSort]);
-//     });
+  return (
+    <form>
 
-//     setFilterData(newSort);
-//     console.log(filterData);
-//   };
+      <select
+        data-testid="column-sort"
+        value={ columSort }
+        onChange={ ({ target }) => setColumSort(target.value) }
+      >
+        <option>population  </option>
+        <option>orbital_period</option>
+        <option>diameter</option>
+        <option>surface_water</option>
+        <option>rotation_period</option>
+      </select>
 
-//   return (
-//     <form>
+      <label htmlFor="input-asc">
+        Ascendente
+        <input
+          data-testid="column-sort-input-asc"
+          type="radio"
+          name="operator"
+          value=">"
+          onChange={ ({ target }) => setOperator(target.value) }
+        />
+      </label>
+      <label htmlFor="input-desc">
+        Descendente
+        <input
+          data-testid="column-sort-input-desc"
+          type="radio"
+          name="operator"
+          value="<"
+          onChange={ ({ target }) => setOperator(target.value) }
+        />
+      </label>
 
-//       <select
-//         data-testid="column-sort"
-//         value={ columSort }
-//         onChange={ ({ target }) => setColumSort(target.value) }
-//       >
-//         <option>population  </option>
-//         <option>orbital_period</option>
-//         <option>diameter</option>
-//         <option>surface_water</option>
-//         <option>rotation_period</option>
-//       </select>
+      <button
+        data-testid="column-sort-button"
+        type="button"
+        onClick={ handleSort }
+      >
+        Ordenar
 
-//       <label htmlFor="input-asc">
-//         Ascendente
-//         <input
-//           data-testid="column-sort-input-asc"
-//           type="radio"
-//           name="operator"
-//           value=">"
-//           onChange={ ({ target }) => setOperator(target.value) }
-//         />
-//       </label>
-//       <label htmlFor="input-desc">
-//         Descendente
-//         <input
-//           data-testid="column-sort-input-desc"
-//           type="radio"
-//           name="operator"
-//           value="<"
-//           onChange={ ({ target }) => setOperator(target.value) }
-//         />
-//       </label>
+      </button>
 
-//       <button
-//         data-testid="column-sort-button"
-//         type="button"
-//         onClick={ handleSort }
-//       >
-//         Ordenar
-
-//       </button>
-
-//     </form>
-//   );
-// }
+    </form>
+  );
+}

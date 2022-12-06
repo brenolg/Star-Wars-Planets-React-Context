@@ -72,13 +72,13 @@ export default function FiltersNumber() {
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
       .filter((filterDel) => target.name !== filterDel.colum);
-    filterByNumber();
 
     setSelectedFilters(newFilters);
     setFilterDelete((prevDel) => ({
       ...prevDel + filter.number,
 
     }));
+    filterByNumber();
   };
 
   return (
@@ -170,7 +170,7 @@ export default function FiltersNumber() {
             onClick={ handleDelete }
 
           >
-            DEL
+            Delete
           </button>
         </>
       ))}

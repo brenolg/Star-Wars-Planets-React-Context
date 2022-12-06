@@ -5,7 +5,7 @@ import StarWarsProvider from '../context/StarWarsProvider';
 import mockPlanets from '../helpers/mockPlanets'
 
 describe('Teste de Filtros', () => {
-  test('Testa se é renderizado 9 planetas', () => {
+  test('Testa se é renderizado 11 planetas', () => {
     global.fetch = jest.fn(async () => ({
         json: async () => mockPlanets
       }));
@@ -17,6 +17,6 @@ describe('Teste de Filtros', () => {
  );
  screen.logTestingPlaygroundURL();
  const tableRows = screen.getAllByRole('row');
- waitFor(() => expect(tableRows).toHaveLength(9));
+ waitFor(() => expect(tableRows).toHaveLength(11));
 })
 });
