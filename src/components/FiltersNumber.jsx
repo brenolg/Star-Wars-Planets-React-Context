@@ -4,6 +4,7 @@ import StarWarsContext from '../context/StarWarsContext';
 export default function FiltersNumber() {
   const { filterData, setFilterData } = useContext(StarWarsContext);
 
+  const [selectedFilters, setSelectedFilters] = useState([]);
   const [columOptions, setColumOptions] = useState([
     'population',
     'orbital_period',
@@ -14,10 +15,9 @@ export default function FiltersNumber() {
 
   const [filter, setFilter] = useState({
     number: 0,
-    colum: 'population',
+    colum: columOptions[0],
     comparison: 'maior que',
   });
-  const [selectedFilters, setSelectedFilters] = useState([]);
 
   useEffect(() => {
     if (selectedFilters.length) {
@@ -25,6 +25,11 @@ export default function FiltersNumber() {
         const newOptions = columOptions.filter((option) => (
           option !== selColum.colum
         ));
+        setFilter({
+          number: 0,
+          colum: newOptions[0],
+          comparison: 'maior que',
+        });
         setColumOptions(newOptions);
       });
     } else {
@@ -36,7 +41,9 @@ export default function FiltersNumber() {
         'rotation_period']);
     }
   }, [selectedFilters]);
+
   // permite somente uma coluna comparison
+
   const filterByNumber = () => {
     let finalDataNumber = filterData;
     finalDataNumber = filterData.filter((line) => {
@@ -55,17 +62,37 @@ export default function FiltersNumber() {
       return bools.every((el) => el);
     });
     setFilterData(finalDataNumber);
+    console.log('Chamou filter Number');
   };
+
   useEffect(() => {
     filterByNumber();
-  }, [filter, selectedFilters]);
+  }, [selectedFilters]);
+
   // filtra numeros
+
+  const handleFilter = () => {
+    setSelectedFilters((prevFilter) => ([
+      ...prevFilter,
+      filter,
+    ]));
+    // filterByNumber();
+  };
+
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
       .filter((filterDel) => target.name !== filterDel.colum);
     setSelectedFilters(newFilters);
     filterByNumber();
   };
+  // remove o filtro selecionado
+
+  const removeAllFillters = () => {
+    setSelectedFilters([]);
+    filterByNumber();
+  };
+  // remove todos os filtros
+
   return (
     <>
       <form>
@@ -115,21 +142,12 @@ export default function FiltersNumber() {
         <button
           data-testid="button-filter"
           type="button"
-          onClick={ () => {
-            setSelectedFilters((prevFilter) => ([
-              ...prevFilter,
-              filter,
-            ]));
-            setFilter({
-              number: 0,
-              colum: columOptions[0],
-              comparison: 'maior que',
-            });
-          } }
+          onClick={ handleFilter }
         >
-          FILTRAR
+          Filtrar
         </button>
       </form>
+
       {selectedFilters.map((filters, index) => (
         <>
           <p
@@ -144,16 +162,16 @@ export default function FiltersNumber() {
             name={ filters.colum }
             onClick={ handleDelete }
           >
-            DEL
+            Excluir
           </button>
         </>
       ))}
       <button
         data-testid="button-remove-filters"
         type="button"
-        onClick={ () => { setSelectedFilters([]); filterByNumber(); } }
+        onClick={ removeAllFillters }
       >
-        Excluir Filtros
+        Excluir Todos
       </button>
     </>
   );
