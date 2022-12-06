@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
 export default function FiltersNumber() {
-  const { filterData, setFilterData } = useContext(StarWarsContext);
+  const { data, filterData, setFilterData } = useContext(StarWarsContext);
 
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [columOptions, setColumOptions] = useState([
@@ -44,9 +44,11 @@ export default function FiltersNumber() {
 
   // permite somente uma coluna comparison
 
+  // const disableButtonFilter = ()
+
   const filterByNumber = () => {
     let finalDataNumber = filterData;
-    finalDataNumber = filterData.filter((line) => {
+    finalDataNumber = data.filter((line) => {
       const bools = [];
       selectedFilters.forEach((filterS) => {
         if (filterS.comparison === 'maior que') {
@@ -61,6 +63,7 @@ export default function FiltersNumber() {
       });
       return bools.every((el) => el);
     });
+    console.log(finalDataNumber);
     setFilterData(finalDataNumber);
     console.log('Chamou filter Number');
   };
@@ -149,22 +152,23 @@ export default function FiltersNumber() {
       </form>
 
       {selectedFilters.map((filters, index) => (
-        <>
+        <div
+          data-testid="filter"
+          key={ filters.colum }
+        >
           <p
-            key={ index }
             name={ index }
           >
             {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
           </p>
           <button
-            data-testid='data-testid="filter"'
             type="button"
             name={ filters.colum }
             onClick={ handleDelete }
           >
             Excluir
           </button>
-        </>
+        </div>
       ))}
       <button
         data-testid="button-remove-filters"
