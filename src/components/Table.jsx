@@ -5,7 +5,7 @@ export default function Table() {
   const { filterData } = useContext(StarWarsContext);
 
   useEffect(() => {
-    console.log(filterData);
+
   }, [filterData]);
 
   return (

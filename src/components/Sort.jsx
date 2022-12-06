@@ -24,7 +24,6 @@ export default function Sort() {
     });
     const newSort = [...knows, ...unknowns];
     setFilterSort(newSort);
-    console.log(newSort);
   };
 
   return (
