@@ -44,8 +44,6 @@ export default function FiltersNumber() {
 
   // permite somente uma coluna comparison
 
-  // const disableButtonFilter = ()
-
   const filterByNumber = () => {
     let finalDataNumber = filterData;
     finalDataNumber = data.filter((line) => {
@@ -63,9 +61,8 @@ export default function FiltersNumber() {
       });
       return bools.every((el) => el);
     });
-    console.log(finalDataNumber);
+
     setFilterData(finalDataNumber);
-    console.log('Chamou filter Number');
   };
 
   useEffect(() => {
@@ -79,7 +76,6 @@ export default function FiltersNumber() {
       ...prevFilter,
       filter,
     ]));
-    // filterByNumber();
   };
 
   const handleDelete = ({ target }) => {
@@ -146,6 +142,7 @@ export default function FiltersNumber() {
           data-testid="button-filter"
           type="button"
           onClick={ handleFilter }
+
         >
           Filtrar
         </button>

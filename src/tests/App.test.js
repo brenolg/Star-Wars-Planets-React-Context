@@ -3,7 +3,7 @@ import { render , screen} from '@testing-library/react';
 import App from '../App';
 import StarWarsProvider from '../context/StarWarsProvider';
 import mockPlanets from '../helpers/mockPlanets'
-
+import { act } from 'react-dom/test-utils';
 
 describe('Teste App', () => {
   test('Testa se a API esta sendo chamada', () => {
@@ -11,14 +11,17 @@ describe('Teste App', () => {
       json: async () => mockPlanets
     }));
     
-  render(
-  <StarWarsProvider> 
-    <App />
-  </StarWarsProvider> );
+    act(() => {
+      render(
+       <StarWarsProvider> 
+        <App />
+      </StarWarsProvider> )
+    });
 
-
+  
   expect(global.fetch).toHaveBeenCalled();
   expect(global.fetch).toHaveBeenCalledTimes(1)
   expect(global.fetch).toBeCalledWith('https://swapi.py4e.com/api/planets')
+  // screen.logTestingPlaygroundURL();
 })
 });

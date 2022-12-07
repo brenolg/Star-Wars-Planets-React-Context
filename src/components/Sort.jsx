@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
 export default function Sort() {
-  const { filterData, dataFunc } = useContext(StarWarsContext);
+  const { data, dataFunc } = useContext(StarWarsContext);
 
   const [operator, setOperator] = useState('>');
   const [columSort, setColumSort] = useState('population');
@@ -13,8 +13,8 @@ export default function Sort() {
   }, [filterSort]);
 
   const handleSort = () => {
-    const unknowns = filterData.filter((planet) => planet[columSort] === 'unknown');
-    const knows = filterData.filter((planet) => planet[columSort] !== 'unknown');
+    const unknowns = data.filter((planet) => planet[columSort] === 'unknown');
+    const knows = data.filter((planet) => planet[columSort] !== 'unknown');
 
     knows.sort((a, b) => {
       if (operator === '>') {
