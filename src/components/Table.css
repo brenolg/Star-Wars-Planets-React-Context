@@ -1,0 +1,36 @@
+.table{
+    overflow: auto;
+    color: white;
+    height: 500px;
+    border-spacing:0px;
+    
+    
+   
+    
+}
+
+
+
+
+
+th{
+    background-color: #2E3035;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 20px;
+    border-collapse: collapse;
+    border: 1px black solid;
+    
+    
+    
+   
+}
+
+td {
+    font-size: 18px;
+    padding: 20px;
+ 
+    
+
+}

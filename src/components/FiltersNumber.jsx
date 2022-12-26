@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import './FilterNumber.css';
 
 export default function FiltersNumber() {
   const { data, filterData, setFilterData } = useContext(StarWarsContext);
@@ -93,9 +94,14 @@ export default function FiltersNumber() {
   // remove todos os filtros
 
   return (
-    <>
-      <form>
-        <label htmlFor="colum-filter">
+    <div id="numberSelected">
+
+      <form id="filterNumber">
+        <label
+          htmlFor="colum-filter"
+          className="selectsNumber"
+        >
+          Coluna
           <select
             data-testid="column-filter"
             name="colum-filter"
@@ -109,7 +115,11 @@ export default function FiltersNumber() {
             ))}
           </select>
         </label>
-        <label htmlFor="comparison-filter">
+        <label
+          htmlFor="comparison-filter"
+          className="selectsNumber"
+        >
+          Operator
           <select
             data-testid="comparison-filter"
             name="comparison-filter"
@@ -139,6 +149,7 @@ export default function FiltersNumber() {
           />
         </label>
         <button
+          className="btnFilter"
           data-testid="button-filter"
           type="button"
           onClick={ handleFilter }
@@ -174,6 +185,6 @@ export default function FiltersNumber() {
       >
         Excluir Todos
       </button>
-    </>
+    </div>
   );
 }

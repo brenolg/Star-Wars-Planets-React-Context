@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import './Sort.css';
 
 export default function Sort() {
   const { data, dataFunc } = useContext(StarWarsContext);
@@ -27,42 +28,55 @@ export default function Sort() {
   };
 
   return (
-    <form>
 
-      <select
-        data-testid="column-sort"
-        value={ columSort }
-        onChange={ ({ target }) => setColumSort(target.value) }
+    <form id="sortForm">
+
+      <label
+        htmlFor="column-sort"
+        className="selectsSort"
       >
-        <option>population  </option>
-        <option>orbital_period</option>
-        <option>diameter</option>
-        <option>surface_water</option>
-        <option>rotation_period</option>
-      </select>
+        Ordenar
+        <select
+          name="column-sort"
+          data-testid="column-sort"
+          value={ columSort }
+          onChange={ ({ target }) => setColumSort(target.value) }
 
-      <label htmlFor="input-asc">
-        Ascendente
-        <input
-          data-testid="column-sort-input-asc"
-          type="radio"
-          name="operator"
-          value=">"
-          onChange={ ({ target }) => setOperator(target.value) }
-        />
+        >
+
+          <option>population  </option>
+          <option>orbital_period</option>
+          <option>diameter</option>
+          <option>surface_water</option>
+          <option>rotation_period</option>
+        </select>
       </label>
-      <label htmlFor="input-desc">
-        Descendente
-        <input
-          data-testid="column-sort-input-desc"
-          type="radio"
-          name="operator"
-          value="<"
-          onChange={ ({ target }) => setOperator(target.value) }
-        />
-      </label>
+
+      <div className="selectsSort">
+        <label htmlFor="input-asc">
+          <input
+            data-testid="column-sort-input-asc"
+            type="radio"
+            name="operator"
+            value=">"
+            onChange={ ({ target }) => setOperator(target.value) }
+          />
+          Ascendente
+        </label>
+        <label htmlFor="input-desc">
+          <input
+            data-testid="column-sort-input-desc"
+            type="radio"
+            name="operator"
+            value="<"
+            onChange={ ({ target }) => setOperator(target.value) }
+          />
+          Descendente
+        </label>
+      </div>
 
       <button
+        className="btnFilter"
         data-testid="column-sort-button"
         type="button"
         onClick={ handleSort }
@@ -72,5 +86,6 @@ export default function Sort() {
       </button>
 
     </form>
+
   );
 }

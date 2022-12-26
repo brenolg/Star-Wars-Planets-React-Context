@@ -1,0 +1,15 @@
+#sortForm{
+    align-items: center;
+        display: flex;
+        flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+        
+        
+}
+
+.selectsSort{
+    display: flex;
+    flex-direction: column;
+
+}

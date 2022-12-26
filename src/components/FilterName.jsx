@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import './FilterName.css';
 
 export default function FilterName() {
   const { setFilterData, data } = useContext(StarWarsContext);
@@ -17,24 +18,19 @@ export default function FilterName() {
   // filtra nome
 
   return (
-    <>
+    <form id="nameForm">
+      <label htmlFor="name-filter">
+        <input
+          id="nameFilter"
+          data-testid="name-filter"
+          name="name-filter"
+          type="text"
+          placeholder="Search planet"
+          onChange={ ({ target }) => setSearchName(target.value) }
+          value={ searchName }
+        />
 
-      <h1>Star Wars</h1>
-
-      <form>
-        <label htmlFor="name-filter">
-          <input
-            data-testid="name-filter"
-            name="name-filter"
-            type="text"
-            placeholder="Search by name"
-            onChange={ ({ target }) => setSearchName(target.value) }
-            value={ searchName }
-          />
-
-        </label>
-      </form>
-
-    </>
+      </label>
+    </form>
   );
 }

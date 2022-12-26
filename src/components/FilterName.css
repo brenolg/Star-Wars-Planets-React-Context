@@ -1,0 +1,12 @@
+#nameForm{
+    margin-top: 700px;
+    padding: 20px
+}
+
+#nameFilter{
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 40vw;
+}
+
