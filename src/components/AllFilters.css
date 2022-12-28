@@ -21,17 +21,6 @@
   padding: 20px;
 }
 
-input {
-  background: none;
-  border: 1px solid #fae60a;
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  font-weight: 900;
-  padding: 15px;
-  width: 30px;
-}
-
 label {
   color: white;
   font-size: 17px;

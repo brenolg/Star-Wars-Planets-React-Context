@@ -136,6 +136,7 @@ export default function FiltersNumber() {
         </label>
 
         <label
+          id="inputNumber "
           htmlFor="number-filter"
           name="name-filter"
           type="number"

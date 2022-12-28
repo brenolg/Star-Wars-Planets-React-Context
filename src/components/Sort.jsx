@@ -55,8 +55,10 @@ export default function Sort() {
         </label>
 
         <div className="operatorSort">
-          <label htmlFor="input-asc">
+          <label className="labelSort" htmlFor="input-asc">
             <input
+              className="radioSort"
+              id="input-asc"
               data-testid="column-sort-input-asc"
               type="radio"
               name="operator"
@@ -66,8 +68,10 @@ export default function Sort() {
             Ascendente
           </label>
 
-          <label htmlFor="input-desc">
+          <label className="labelSort" htmlFor="input-desc">
             <input
+              className="radioSort"
+              id="input-desc"
               data-testid="column-sort-input-desc"
               type="radio"
               name="operator"
