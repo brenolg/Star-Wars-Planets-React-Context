@@ -3,7 +3,7 @@ import './App.css';
 import Table from './components/Table';
 import AllFilters from './components/AllFilters';
 import Header from './components/Header';
-import background from './images/background.svg';
+import galaxy from './images/galaxy.jpg';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
     <body>
       <img
         id="background"
-        src={ background }
+        src={ galaxy }
         alt="tiltle"
       />
       <Header />

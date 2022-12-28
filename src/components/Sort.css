@@ -1,15 +1,38 @@
-#sortForm{
-    align-items: center;
-        display: flex;
-        flex-direction: row;
-    justify-content: space-evenly;
-    width: 50%;
-        
-        
+#sortForm {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-around;
+  width: 40%;
 }
 
-.selectsSort{
-    display: flex;
-    flex-direction: column;
+.operatorSort {
+  display: flex;
+  flex-direction: column;
+}
 
+#atat {
+  height: 25vh;
+  left: 45vw;
+  position: absolute;
+  top: 27vh;
+  z-index: 3;
+}
+
+#walker {
+  height: 20vh;
+  position: absolute;
+  right: 12vw;
+  top: 32vh;
+  z-index: 3;
+}
+
+
+#ship {
+  height: 8vh;
+  left: 35vw;
+  position: absolute;
+  top: 33vh;
+  z-index: 3;
 }

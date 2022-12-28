@@ -9,6 +9,7 @@ export default function removeAllFillters() {
       <section id="nameSection">
         <FilterName />
       </section>
+
       <section id="numberSortSection">
         <FiltersNumber />
         <Sort />

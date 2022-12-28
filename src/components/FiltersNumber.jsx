@@ -94,9 +94,9 @@ export default function FiltersNumber() {
   // remove todos os filtros
 
   return (
-    <div id="numberSelected">
+    <section id="numberSelectedSection">
 
-      <form id="filterNumber">
+      <form id="filterNumberForm">
         <label
           htmlFor="colum-filter"
           className="selectsNumber"
@@ -115,6 +115,7 @@ export default function FiltersNumber() {
             ))}
           </select>
         </label>
+
         <label
           htmlFor="comparison-filter"
           className="selectsNumber"
@@ -133,13 +134,14 @@ export default function FiltersNumber() {
             <option>igual a</option>
           </select>
         </label>
+
         <label
           htmlFor="number-filter"
-          data-testid=""
           name="name-filter"
           type="number"
         >
           <input
+            id="inputNumber"
             data-testid="value-filter"
             type="number"
             value={ filter.number }
@@ -148,43 +150,52 @@ export default function FiltersNumber() {
             })) }
           />
         </label>
+
         <button
           className="btnFilter"
           data-testid="button-filter"
           type="button"
           onClick={ handleFilter }
-
         >
           Filtrar
         </button>
       </form>
 
-      {selectedFilters.map((filters, index) => (
-        <div
-          data-testid="filter"
-          key={ filters.colum }
+      <section id="selectedFiltersSection">
+
+        <button
+          id="delAllFilters"
+          data-testid="button-remove-filters"
+          type="button"
+          onClick={ removeAllFillters }
         >
-          <p
-            name={ index }
+          Excluir Filtros
+        </button>
+
+        {selectedFilters.map((filters, index) => (
+          <div
+            className="selectetFilterDiv"
+            data-testid="filter"
+            key={ filters.colum }
           >
-            {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
-          </p>
-          <button
-            type="button"
-            name={ filters.colum }
-            onClick={ handleDelete }
-          >
-            Excluir
-          </button>
-        </div>
-      ))}
-      <button
-        data-testid="button-remove-filters"
-        type="button"
-        onClick={ removeAllFillters }
-      >
-        Excluir Todos
-      </button>
-    </div>
+            <p
+              name={ index }
+            >
+              {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
+            </p>
+            <button
+              className="delSelectedFilter"
+              type="button"
+              name={ filters.colum }
+              onClick={ handleDelete }
+            >
+              Excluir
+            </button>
+            <div />
+          </div>
+        ))}
+
+      </section>
+    </section>
   );
 }

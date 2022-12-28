@@ -1,29 +1,55 @@
-#nameSection{
-    display: flex;
-    justify-content: center;
-    font-size: 14;
+#nameSection {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
 }
 
-
-#numberSortSection{
-    display: flex;
-    flex-direction: row;
-    font-size: 14;
-    width: 100%;
-    
+#numberSortSection {
+  display: flex;
+  flex-direction: row;
+  height: 35vh;
+  width: 100%;
 }
 
-#numberSelected {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
 .btnFilter {
-    color: #FAE60A;
-    border-radius: 10px;
-    padding: 20px;
-    background: none;
-    font-weight: 900;
-    font-size: 20px;
-    border: 1px solid #FAE60A;;
+  background: black;
+  border: 1px solid #fae60a;
+  border-radius: 10px;
+  color: #fae60a;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 20px;
+}
+
+input {
+  background: none;
+  border: 1px solid #fae60a;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 15px;
+  width: 30px;
+}
+
+label {
+  color: white;
+  font-size: 17px;
+  font-weight: 900;
+  padding: 10px;
+}
+
+select {
+  background: black;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 10px;
+}
+
+option {
+  background: #2e3035;
+  font-size: 15px;
+  font-weight: 900;
 }

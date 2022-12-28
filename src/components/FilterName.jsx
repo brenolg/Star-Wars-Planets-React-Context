@@ -19,6 +19,7 @@ export default function FilterName() {
 
   return (
     <form id="nameForm">
+
       <label htmlFor="name-filter">
         <input
           id="nameFilter"

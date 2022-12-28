@@ -1,12 +1,19 @@
-#nameForm{
-    margin-top: 700px;
-    padding: 20px
+#nameForm {
+  align-items: center;
+  display: flex;
+  margin-top: 4vh;
+  padding: 20px;
 }
 
-#nameFilter{
-    padding: 15px;
-    border-radius: 10px;
-    border: 2px solid white;
-    width: 40vw;
+::placeholder {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#nameFilter {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 13px;
+  width: 40vw;
 }
 

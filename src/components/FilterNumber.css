@@ -1,14 +1,73 @@
-#filterNumber {
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    flex-direction: row;
-    
+#numberSelectedSection {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
 }
 
-.selectsNumber{
-    display: flex;
-    flex-direction: column;
-    
-    
+#filterNumberForm {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-around;
+  margin-left: 50px;
+}
+
+.columSelect {
+  width: 300vw;
+}
+
+.selectsNumber {
+  display: flex;
+  flex-direction: column;
+}
+
+#inputNumber {
+  background-color: black;
+  padding: 20px;
+  width: 5vw;
+}
+
+#selectedFiltersSection {
+  height: 20vh;
+  margin-left: 90px;
+  max-height: 30vh;
+  overflow: auto;
+  width: 23vw;
+}
+
+.selectetFilterDiv {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+  font-weight: 900;
+  height: 6vh;
+  justify-content: space-between;
+  max-height: 5 , 5vh;
+  position: relative;
+}
+
+.delSelectedFilter {
+  background: none;
+  border: 1px solid #fae60a;
+  border-radius: 10px;
+  color: #fae60a;
+  font-size: 15px;
+  font-weight: 900;
+  left: 75%;
+  padding: 12px;
+  position: absolute;
+}
+
+#delAllFilters {
+  background: black;
+  border: 1px solid #fae60a;
+  border-radius: 10px;
+  color: #fae60a;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 12px;
+  width: 22vw;
 }

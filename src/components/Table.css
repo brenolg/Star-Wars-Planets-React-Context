@@ -1,36 +1,29 @@
-.table{
-    overflow: auto;
-    color: white;
-    height: 500px;
-    border-spacing:0px;
-    
-    
-   
-    
+.tableSection {
+  color: white;
+  height: 95vh;
+  margin-top: 4vh;
+  overflow: auto;
 }
 
+table {
+  border-collapse: collapse;
+}
 
-
-
-
-th{
-    background-color: #2E3035;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 30px;
-    padding: 20px;
-    border-collapse: collapse;
-    border: 1px black solid;
-    
-    
-    
-   
+th {
+  background-color: #2e3035;
+  border: 1px black solid;
+  border-spacing: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  min-width: 130px;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
 td {
-    font-size: 18px;
-    padding: 20px;
- 
-    
-
+  font-size: 18px;
+  padding: 20px;
 }

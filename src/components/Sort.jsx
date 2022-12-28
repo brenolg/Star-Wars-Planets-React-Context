@@ -1,6 +1,9 @@
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 import './Sort.css';
+import atat from '../images/atat.png';
+import walker from '../images/walker.png';
+import ship from '../images/ship.png';
 
 export default function Sort() {
   const { data, dataFunc } = useContext(StarWarsContext);
@@ -28,64 +31,81 @@ export default function Sort() {
   };
 
   return (
+    <>
 
-    <form id="sortForm">
+      <form id="sortForm">
 
-      <label
-        htmlFor="column-sort"
-        className="selectsSort"
-      >
-        Ordenar
-        <select
-          name="column-sort"
-          data-testid="column-sort"
-          value={ columSort }
-          onChange={ ({ target }) => setColumSort(target.value) }
-
+        <label
+          htmlFor="column-sort"
+          className="operatorSort"
         >
-
-          <option>population  </option>
-          <option>orbital_period</option>
-          <option>diameter</option>
-          <option>surface_water</option>
-          <option>rotation_period</option>
-        </select>
-      </label>
-
-      <div className="selectsSort">
-        <label htmlFor="input-asc">
-          <input
-            data-testid="column-sort-input-asc"
-            type="radio"
-            name="operator"
-            value=">"
-            onChange={ ({ target }) => setOperator(target.value) }
-          />
-          Ascendente
+          Ordenar
+          <select
+            name="column-sort"
+            data-testid="column-sort"
+            value={ columSort }
+            onChange={ ({ target }) => setColumSort(target.value) }
+          >
+            <option>population  </option>
+            <option>orbital_period</option>
+            <option>diameter</option>
+            <option>surface_water</option>
+            <option>rotation_period</option>
+          </select>
         </label>
-        <label htmlFor="input-desc">
-          <input
-            data-testid="column-sort-input-desc"
-            type="radio"
-            name="operator"
-            value="<"
-            onChange={ ({ target }) => setOperator(target.value) }
-          />
-          Descendente
-        </label>
-      </div>
 
-      <button
-        className="btnFilter"
-        data-testid="column-sort-button"
-        type="button"
-        onClick={ handleSort }
-      >
-        Ordenar
+        <div className="operatorSort">
+          <label htmlFor="input-asc">
+            <input
+              data-testid="column-sort-input-asc"
+              type="radio"
+              name="operator"
+              value=">"
+              onChange={ ({ target }) => setOperator(target.value) }
+            />
+            Ascendente
+          </label>
 
-      </button>
+          <label htmlFor="input-desc">
+            <input
+              data-testid="column-sort-input-desc"
+              type="radio"
+              name="operator"
+              value="<"
+              onChange={ ({ target }) => setOperator(target.value) }
+            />
+            Descendente
+          </label>
+        </div>
 
-    </form>
+        <button
+          className="btnFilter"
+          data-testid="column-sort-button"
+          type="button"
+          onClick={ handleSort }
+        >
+          Ordenar
+        </button>
+      </form>
+
+      <img
+        id="atat"
+        src={ atat }
+        alt="atat"
+      />
+
+      <img
+        id="walker"
+        src={ walker }
+        alt="walker"
+      />
+
+      <img
+        id="ship"
+        src={ ship }
+        alt="ship"
+      />
+    </>
 
   );
 }

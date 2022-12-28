@@ -10,7 +10,7 @@ export default function Table() {
   }, [filterData]);
 
   return (
-    <section className="table">
+    <section className="tableSection">
 
       <table>
         <thead>

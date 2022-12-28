@@ -1,29 +1,38 @@
-*{
- 
-  
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 
-}
-body {
-  width: 100%;
-  
 }
 
 main {
-
-  width: 90%;
   background: none;
-  margin: auto;
-  border: 1px solid #FFFFFF;
+  border: 1px solid white;
   border-radius: 30px;
-  position: relative;
-  
- 
- 
-  
-  
+  margin: 30vh 5vw 3vh;
+  position: absolute;
+  width: 90vw;
+  z-index: 2;
 }
 
-#background{
+#background {
   position: absolute;
   width: 100%;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  border: 1px solid white;
+  border-radius: 20px;
+  height: 12px;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  border-radius: 5px;
 }
