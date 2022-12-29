@@ -20,16 +20,17 @@ export default function FilterName() {
   return (
     <form id="nameForm">
 
-      <label htmlFor="name-filter">
+      <label id="labelName" htmlFor="name-filter">
         <input
-          id="nameFilter"
+          required
+          id="nameInput"
           data-testid="name-filter"
           name="name-filter"
           type="text"
-          placeholder="Search planet"
           onChange={ ({ target }) => setSearchName(target.value) }
           value={ searchName }
         />
+        <span id="placeholder">Search Planet</span>
 
       </label>
     </form>

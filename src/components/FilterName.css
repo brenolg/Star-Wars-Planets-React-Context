@@ -5,15 +5,44 @@
   padding: 20px;
 }
 
-::placeholder {
+#labelName{
+  position: relative;
   font-size: 20px;
-  font-weight: 900;
 }
 
-#nameFilter {
-  border: 2px solid white;
+#nameInput {
+  position: relative;
+  color: white;
+  font-size: 20px;
+  border: none;
+  appearance: none;
+border: 1px solid white;
+  background-color: black;
   border-radius: 10px;
   padding: 13px;
   width: 40vw;
+  outline: none;
 }
+
+#labelName #placeholder{
+  position: absolute;
+  left: 30px;
+  top: calc(50% );
+  transform: translateY(-50%);
+  transition: 
+  top 0.6s  ease,
+  font-weight 0.6s ease,
+  font-size 0.6s  ease,
+  color  0.6s  ease;
+  
+}
+#labelName input:valid + #placeholder,
+#labelName input:focus + #placeholder {
+ top:   -7px;
+ font-weight: 900;
+ font-size: 16px;
+ color: #fae60a;
+  
+}
+
 
