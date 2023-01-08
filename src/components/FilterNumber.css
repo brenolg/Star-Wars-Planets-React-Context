@@ -14,14 +14,14 @@
 }
 
 #inputNumber {
-  background: none;
+  background-color: black;
   border: 1px solid #fae60a;
   border-radius: 10px;
   color: white;
   font-size: 15px;
   font-weight: 900;
-  padding: 15px;
-  width: 30px;
+  padding: 20px;
+  width: 5vw;
 }
 
 .columSelect {
@@ -31,12 +31,6 @@
 .selectsNumber {
   display: flex;
   flex-direction: column;
-}
-
-#inputNumber {
-  background-color: black;
-  padding: 20px;
-  width: 5vw;
 }
 
 #selectedFiltersSection {

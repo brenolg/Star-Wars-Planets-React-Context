@@ -1,0 +1,26 @@
+footer {
+  background: none;
+  border: 1px solid white;
+  border-radius: 30px;
+  bottom: -92vh;
+  color: #fae60a;
+  font-size: 22px;
+  font-weight: 900;
+  margin: 30vh 5vw 3vh;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  width: 90vw;
+  z-index: 2;
+}
+
+footer a {
+  color: #fae60a;
+  padding: 20px;
+  text-decoration: none;
+  transition: color 0.6s ease-in-out;
+}
+
+footer a:hover {
+  color: white;
+}
