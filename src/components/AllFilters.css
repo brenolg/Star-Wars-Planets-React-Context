@@ -16,9 +16,30 @@
   border: 1px solid #fae60a;
   border-radius: 10px;
   color: #fae60a;
+  cursor: pointer;
   font-size: 15px;
   font-weight: 900;
-  padding: 20px;
+  padding: 22px;
+  transition: all 0.6s ease-in-out;
+}
+
+.btnFilter:hover {
+  background: #2e3035;
+  color: white;
+}
+
+.btnFilter:focus {
+  animation: shadow 0.3s ease-in;
+}
+
+@keyframes shadow {
+
+  0% {
+    box-shadow: 0 0 1px 1px #fae60a;}
+
+  100% {
+    box-shadow: 0 0 3px 3px #fae60a;
+  }
 }
 
 label {
@@ -32,13 +53,18 @@ select {
   background: black;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
   font-size: 15px;
   font-weight: 900;
+  margin-top: 10px;
   padding: 10px;
+  transition: all 0.6s  ease-in-out;
 }
 
-option {
+select:hover {
   background: #2e3035;
-  font-size: 15px;
-  font-weight: 900;
+}
+
+select:focus {
+  border: 1px solid #fae60a;
 }

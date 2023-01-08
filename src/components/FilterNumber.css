@@ -14,14 +14,20 @@
 }
 
 #inputNumber {
-  background-color: black;
+  background: black;
   border: 1px solid #fae60a;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
   font-size: 15px;
   font-weight: 900;
-  padding: 20px;
+  padding: 22px;
+  transition: all 0.6s  ease-in-out;
   width: 5vw;
+}
+
+#inputNumber:hover {
+  background: #2e3035;
 }
 
 .columSelect {
@@ -55,15 +61,17 @@
 }
 
 .delSelectedFilter {
-  background: none;
+  background: black;
   border: 1px solid #fae60a;
   border-radius: 10px;
   color: #fae60a;
+  cursor: pointer;
   font-size: 15px;
   font-weight: 900;
   left: 75%;
   padding: 12px;
   position: absolute;
+  transition: all 0.6s  ease-in-out;
 }
 
 #delAllFilters {
@@ -71,8 +79,16 @@
   border: 1px solid #fae60a;
   border-radius: 10px;
   color: #fae60a;
+  cursor: pointer;
   font-size: 15px;
   font-weight: 900;
   padding: 12px;
+  transition: all 0.6s  ease-in-out;
   width: 22vw;
 }
+
+#delAllFilters:hover, .delSelectedFilter:hover {
+  background: #2e3035;
+  color: white;
+}
+

@@ -111,7 +111,7 @@ export default function FiltersNumber() {
             })) }
           >
             {columOptions.map((option, index) => (
-              <option key={ index }>{option}</option>
+              <option className="options" key={ index }>{option}</option>
             ))}
           </select>
         </label>

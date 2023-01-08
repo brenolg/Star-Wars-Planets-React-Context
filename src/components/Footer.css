@@ -6,12 +6,16 @@ footer {
   color: #fae60a;
   font-size: 22px;
   font-weight: 900;
-  margin: 30vh 5vw 3vh;
+  margin: 30vh 22vw 3vh;
   padding: 20px;
   position: absolute;
   text-align: center;
-  width: 90vw;
+  width: 56vw;
   z-index: 2;
+}
+
+footer p {
+  background-color: black;
 }
 
 footer a {
