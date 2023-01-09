@@ -17,7 +17,6 @@
   border-radius: 10px;
   color: white;
   font-size: 20px;
-  outline: none;
   padding: 13px;
   position: relative;
   width: 40vw;
@@ -36,4 +35,12 @@
   font-size: 16px;
   font-weight: 900;
   top: -7px;
+}
+
+#search {
+  position: absolute;
+  right: 30px;
+  top: calc(50%);
+  transform: translateY(-50%);
+
 }

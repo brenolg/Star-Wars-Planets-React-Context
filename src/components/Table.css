@@ -14,9 +14,9 @@ th {
   border: 1px black solid;
   border-spacing: 0;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 30px;
-  min-width: 130px;
+  min-width: 135px;
   padding: 5px;
   position: sticky;
   top: 0;
@@ -24,6 +24,9 @@ th {
 }
 
 td {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
   padding: 20px;
+  text-align: center;
 }

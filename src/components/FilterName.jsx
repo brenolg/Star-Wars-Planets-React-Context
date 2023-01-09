@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import search from '../images/search.png';
 import './FilterName.css';
 
 export default function FilterName() {
@@ -30,7 +31,12 @@ export default function FilterName() {
           onChange={ ({ target }) => setSearchName(target.value) }
           value={ searchName }
         />
-        <span id="placeholder">Search Planet</span>
+        <span id="placeholder">Procure planetas por nome</span>
+        <img
+          id="search"
+          src={ search }
+          alt="search"
+        />
 
       </label>
     </form>
