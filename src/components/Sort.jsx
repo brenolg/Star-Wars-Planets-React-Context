@@ -16,6 +16,10 @@ export default function Sort() {
     dataFunc(filterSort);
   }, [filterSort]);
 
+  const handleColum = ({ target }) => {
+    setColumSort(target.value);
+  };
+
   const handleSort = () => {
     const unknowns = data.filter((planet) => planet[columSort] === 'unknown');
     const knows = data.filter((planet) => planet[columSort] !== 'unknown');
@@ -35,24 +39,61 @@ export default function Sort() {
 
       <form id="sortForm">
 
-        <label
-          htmlFor="column-sort"
-          className="operatorSort"
+        <div
+          className="dropdown"
         >
-          Ordenar
-          <select
-            name="column-sort"
+          <span className="label-select">Ordenar</span>
+          <div
+            className="dropdown-select , dropdown-select-colum  "
             data-testid="column-sort"
-            value={ columSort }
-            onChange={ ({ target }) => setColumSort(target.value) }
           >
-            <option>population  </option>
-            <option>orbital_period</option>
-            <option>diameter</option>
-            <option>surface_water</option>
-            <option>rotation_period</option>
-          </select>
-        </label>
+            { columSort }
+
+          </div>
+          <div className="dropdown-list">
+            <button
+              className="dropddown-item"
+              type="button"
+              value="population"
+              onClick={ handleColum }
+            >
+              population
+            </button>
+            <button
+              className="dropddown-item"
+              type="button"
+              value="orbital_period"
+              onClick={ handleColum }
+            >
+              orbital_period
+            </button>
+            <button
+              className="dropddown-item"
+              type="button"
+              value="diameter"
+              onClick={ handleColum }
+            >
+              diameter
+            </button>
+            <button
+              className="dropddown-item"
+              type="button"
+              value="surface_water"
+              onClick={ handleColum }
+            >
+              surface_water
+            </button>
+            <button
+              className="dropddown-item"
+              type="button"
+              value="rotation_period"
+              onClick={ handleColum }
+            >
+              rotation_period
+            </button>
+          </div>
+
+        </div>
 
         <div className="operatorSort">
           <label className="labelSort" htmlFor="input-asc">

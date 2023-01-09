@@ -13,30 +13,8 @@
   margin-left: 50px;
 }
 
-#inputNumber {
-  background: black;
-  border: 1px solid #fae60a;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 900;
-  padding: 22px;
-  transition: all 0.6s  ease-in-out;
-  width: 5vw;
-}
-
-#inputNumber:hover {
-  background: #2e3035;
-}
-
-.columSelect {
-  width: 300vw;
-}
-
-.selectsNumber {
-  display: flex;
-  flex-direction: column;
+#dropdown-select-operator {
+  width: 125px;
 }
 
 #selectedFiltersSection {
@@ -66,11 +44,11 @@
   border-radius: 10px;
   color: #fae60a;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 900;
-  left: 75%;
-  padding: 12px;
+  padding: 15px;
   position: absolute;
+  right: 15px;
   transition: all 0.6s  ease-in-out;
 }
 
@@ -92,3 +70,71 @@
   color: white;
 }
 
+.custom-num {
+  align-items: center;
+  background: black;
+  border: 1px solid white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 65px;
+  position: relative;
+  transition: all 0.6s  ease-in-out;
+  width: 90px;
+}
+
+.custom-num:hover {
+  background-color: #2e3035;
+  border: 1px solid #fae60a;
+}
+
+#inputNumber {
+  background: none;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 900;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#inputNumber:focus {
+  outline: none;
+}
+
+#inputNumber::-webkit-outer-spin-button, #inputNumber::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+#arowUp {
+  color: #fae60a;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#arowDown {
+  color: #fae60a;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.arrowBtn {
+  background: none;
+  border: none;
+  min-height: fit-content;
+  min-width: fit-content;
+}
+
+#arrowBtnTop {
+  position: absolute;
+  top: 5px;
+}
+
+#arrowBtnBot {
+  bottom: 5px;
+  position: absolute;
+}

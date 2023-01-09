@@ -1,6 +1,8 @@
 import { useEffect, useState, useContext } from 'react';
-import StarWarsContext from '../context/StarWarsContext';
 import './FilterNumber.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import StarWarsContext from '../context/StarWarsContext';
 
 export default function FiltersNumber() {
   const { data, filterData, setFilterData } = useContext(StarWarsContext);
@@ -79,6 +81,25 @@ export default function FiltersNumber() {
     ]));
   };
 
+  const handleOperator = ({ target }) => {
+    setFilter((prevFilter) => ({
+      ...prevFilter, comparison: target.value,
+    }));
+  };
+
+  const totalSum = (filter.number + 1);
+  const totalSub = (filter.number - 1);
+  const sumNumber = () => {
+    setFilter((prevFilter) => ({
+      ...prevFilter, number: totalSum,
+    }));
+  };
+  const subNumber = () => {
+    setFilter((prevFilter) => ({
+      ...prevFilter, number: totalSub,
+    }));
+  };
+
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
       .filter((filterDel) => target.name !== filterDel.colum);
@@ -93,54 +114,105 @@ export default function FiltersNumber() {
   };
   // remove todos os filtros
 
+  const noFilter = 'Sem opções';
+
   return (
     <section id="numberSelectedSection">
 
       <form id="filterNumberForm">
-        <label
-          htmlFor="colum-filter"
-          className="selectsNumber"
+
+        <div
+          className="dropdown"
         >
-          Coluna
-          <select
+          <span className="label-select"> Coluna</span>
+          <div
+            className="dropdown-select , dropdown-select-colum  "
             data-testid="column-filter"
             name="colum-filter"
-            value={ filter.colum }
-            onChange={ ({ target }) => setFilter((prevFilter) => ({
-              ...prevFilter, colum: target.value,
-            })) }
+          >
+            { filter.colum === undefined
+              ? noFilter
+              : filter.colum}
+          </div>
+
+          <div
+            className="dropdown-list"
           >
             {columOptions.map((option, index) => (
-              <option key={ index }>{option}</option>
+              <button
+                className="dropddown-item"
+                type="button"
+                key={ index }
+                value={ option }
+                onClick={ ({ target }) => setFilter((prevFilter) => ({
+                  ...prevFilter, colum: target.value,
+                })) }
+              >
+                {option}
+              </button>
             ))}
-          </select>
-        </label>
+          </div>
+        </div>
 
-        <label
-          htmlFor="comparison-filter"
-          className="selectsNumber"
+        <div
+          className="dropdown"
         >
-          Operator
-          <select
-            data-testid="comparison-filter"
-            name="comparison-filter"
-            value={ filter.comparison }
-            onChange={ ({ target }) => setFilter((prevFilter) => ({
-              ...prevFilter, comparison: target.value,
-            })) }
+          <span className="label-select"> Operator</span>
+          <div
+            id="dropdown-select-operator"
+            className="dropdown-select   "
+            data-testid="column-sort"
           >
-            <option>maior que</option>
-            <option>menor que</option>
-            <option>igual a</option>
-          </select>
-        </label>
+            { filter.comparison }
+          </div>
+          <div
+            className="dropdown-list"
+            value={ filter.comparison }
+          >
+            <button
+              className="dropddown-item"
+              type="button"
+              value="maior que"
+              onClick={ handleOperator }
+            >
+              maior que
+            </button>
+            <button
+              className="dropddown-item"
+              type="button"
+              value="menor que"
+              onClick={ handleOperator }
+            >
+              menor que
+            </button>
+            <button
+              className="dropddown-item"
+              type="button"
+              value="igual a"
+              onClick={ handleOperator }
+            >
+              igual a
+            </button>
+          </div>
+        </div>
 
-        <label
-          id="inputNumber "
-          htmlFor="number-filter"
-          name="name-filter"
-          type="number"
+        <div
+          className="custom-num"
         >
+          <button
+            id="arrowBtnTop"
+            className="arrowBtn"
+            type="button"
+            value={ filter.number }
+            onClick={ sumNumber }
+          >
+            <FontAwesomeIcon
+              icon={ faChevronUp }
+              id="arowUp"
+            />
+
+          </button>
+
           <input
             id="inputNumber"
             data-testid="value-filter"
@@ -150,7 +222,16 @@ export default function FiltersNumber() {
               ...prevFilter, number: target.value,
             })) }
           />
-        </label>
+          <button
+            id="arrowBtnBot"
+            className="arrowBtn"
+            type="button"
+            value={ filter.number }
+            onClick={ subNumber }
+          >
+            <FontAwesomeIcon icon={ faChevronDown } id="arowDown" />
+          </button>
+        </div>
 
         <button
           className="btnFilter"

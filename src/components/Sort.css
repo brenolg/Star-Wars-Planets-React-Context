@@ -49,23 +49,23 @@
 }
 
 #atat {
-  height: 25vh;
+  height: 22vh;
   left: 45vw;
   position: absolute;
-  top: 27vh;
+  top: 30vh;
   z-index: 3;
 }
 
 #walker {
-  height: 20vh;
+  height: 15vh;
   position: absolute;
   right: 12vw;
-  top: 32vh;
+  top: 36vh;
   z-index: 3;
 }
 
 #ship {
-  height: 8vh;
+  height: 5vh;
   left: 35vw;
   position: absolute;
   top: 33vh;

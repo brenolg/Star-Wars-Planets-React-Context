@@ -16,6 +16,7 @@
   border: 1px solid white;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
   font-size: 20px;
   padding: 13px;
   position: relative;
@@ -24,6 +25,7 @@
 
 #labelName #placeholder {
   left: 30px;
+  pointer-events: none;
   position: absolute;
   top: calc(50%);
   transform: translateY(-50%);
@@ -38,9 +40,9 @@
 }
 
 #search {
+  pointer-events: none;
   position: absolute;
   right: 30px;
   top: calc(50%);
   transform: translateY(-50%);
-
 }
