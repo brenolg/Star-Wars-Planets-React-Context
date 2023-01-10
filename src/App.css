@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.body {
+  height: 160vh;
+}
+
 main {
   background: none;
   border: 1px solid white;
@@ -16,35 +20,40 @@ main {
 }
 
 #background {
+  height: 160vh;
   position: absolute;
   width: 100%;
   z-index: 1;
 }
 
 ::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
+  background: black;
+  width: 15px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: none;
   background-color: gray;
+  border: 1px solid rgb(1, 0, 0);
   border-radius: 30px;
-  height: 10px;
-  width: 10px;
 }
 
-::-webkit-scrollbar-track-piece {
-  background: none;
-  background-color: black;
-  border-radius: 5px;
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(160, 154, 154);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100%;
+  margin-block: 25vh;
+}
+
+main ::-webkit-scrollbar-track {
+  margin-block: 1px;
 }
 
 ::-webkit-scrollbar-corner {
   background: none;
 }
 
-main ::-webkit-scrollbar-track-piece {
+main ::-webkit-scrollbar {
   background: none;
-  width: 50px;
 }

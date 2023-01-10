@@ -21,6 +21,7 @@
 .radioSort {
   align-items: center;
   appearance: none;
+  background: black;
   border: 1px solid #fae60a;
   border-radius: 50%;
   cursor: pointer;
@@ -49,18 +50,18 @@
 }
 
 #atat {
-  height: 22vh;
-  left: 45vw;
+  height: 20vh;
+  left: 43vw;
   position: absolute;
-  top: 30vh;
+  top: 249px;
   z-index: 3;
 }
 
 #walker {
-  height: 15vh;
+  height: 13vh;
   position: absolute;
   right: 12vw;
-  top: 36vh;
+  top: 302px;
   z-index: 3;
 }
 

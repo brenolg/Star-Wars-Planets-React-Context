@@ -40,7 +40,7 @@
 }
 
 .btnFilter:focus, .dropddown-item:focus {
-  animation: shadow 0.3s ease-in;
+  animation: shadow 0.2s ease-in;
 }
 
 @keyframes shadow {
@@ -49,7 +49,7 @@
     box-shadow: 0 0 1px 1px #fae60a;}
 
   100% {
-    box-shadow: 0 0 3px 3px #fae60a;
+    box-shadow: 0 0 15px 1px #fae60a;
   }
 }
 

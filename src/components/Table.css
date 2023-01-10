@@ -1,8 +1,10 @@
 .tableSection {
   color: white;
-  height: 95vh;
-  margin-top: 4vh;
+  height: 60vh;
+  margin: auto;
   overflow: auto;
+  position: relative;
+  width: 88vw;
 }
 
 table {
@@ -16,11 +18,40 @@ th {
   font-size: 18px;
   font-weight: 900;
   line-height: 30px;
-  min-width: 135px;
-  padding: 5px;
+  min-width: 140px;
+  padding: 10px;
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 5;
+}
+
+th:first-child {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+th:last-child {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+th:nth-child( 10 ), th:nth-child( 13 ) {
+  min-width: 325px;
+}
+
+th:nth-child( 11 ), th:nth-child( 12 ), th:nth-child( 9 ), th:nth-child( 1 ) {
+  min-width: 200px;
+}
+
+main:before {
+  background-color: black;
+  content: '';
+  height: 90px;
+  margin: 1vw;
+  position: absolute;
+  top: 387px;
+  width: 87vw;
+  z-index: 4;
 }
 
 td {

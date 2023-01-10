@@ -45,4 +45,5 @@
   right: 30px;
   top: calc(50%);
   transform: translateY(-50%);
+  transition: all 0.6s ease;
 }

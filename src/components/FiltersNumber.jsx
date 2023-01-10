@@ -85,6 +85,7 @@ export default function FiltersNumber() {
     setFilter((prevFilter) => ({
       ...prevFilter, comparison: target.value,
     }));
+    console.log(selectedFilters.length);
   };
 
   const totalSum = (filter.number + 1);
@@ -246,7 +247,8 @@ export default function FiltersNumber() {
       <section id="selectedFiltersSection">
 
         <button
-          id="delAllFilters"
+          className={ selectedFilters.length >= 1 ? 'delAllFilters visible'
+            : 'delAllFilters invisible' }
           data-testid="button-remove-filters"
           type="button"
           onClick={ removeAllFillters }
