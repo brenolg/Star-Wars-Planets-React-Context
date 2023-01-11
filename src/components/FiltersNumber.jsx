@@ -54,7 +54,7 @@ export default function FiltersNumber() {
         comparison: 'maior que',
       });
     }
-  }, [selectedFilters, filter]);
+  }, [selectedFilters, columOptions.length]);
 
   // permite somente uma coluna comparison
 
@@ -97,7 +97,6 @@ export default function FiltersNumber() {
 
   const handleVisiblity = () => {
     if (selRef.current !== 0 && selRef.current !== null) {
-      console.log(selRef.current);
       selRef.current.className = 'selectetFilterDiv visible';
     }
   };
