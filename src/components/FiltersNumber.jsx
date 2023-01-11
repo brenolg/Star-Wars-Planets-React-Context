@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useRef } from 'react';
 import './FilterNumber.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +22,8 @@ export default function FiltersNumber() {
     colum: columOptions[0],
     comparison: 'maior que',
   });
+
+  const selRef = useRef(0);
 
   useEffect(() => {
     if (selectedFilters.length) {
@@ -93,6 +95,17 @@ export default function FiltersNumber() {
 
   // filtra numeros
 
+  const handleVisiblity = () => {
+    if (selRef.current !== 0 && selRef.current !== null) {
+      console.log(selRef.current);
+      selRef.current.className = 'selectetFilterDiv visible';
+    }
+  };
+
+  useEffect(() => {
+    handleVisiblity();
+  }, [selRef.current]);
+
   const handleFilter = () => {
     setSelectedFilters((prevFilter) => ([
       ...prevFilter,
@@ -126,7 +139,6 @@ export default function FiltersNumber() {
       target.className = 'enableBtn';
     }
   };
-  /// //////
 
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
@@ -143,7 +155,6 @@ export default function FiltersNumber() {
   // remove todos os filtros
 
   const noFilter = 'Sem opções';
-
   return (
     <section id="numberSelectedSection">
 
@@ -238,7 +249,6 @@ export default function FiltersNumber() {
               icon={ faChevronUp }
               id="arowUp"
             />
-
           </button>
 
           <input
@@ -300,7 +310,9 @@ export default function FiltersNumber() {
 
         {selectedFilters.map((filters, index) => (
           <div
-            className="selectetFilterDiv"
+            ref={ selRef }
+            id={ `sel${index}` }
+            className="selectetFilterDiv invisible"
             data-testid="filter"
             key={ filters.colum }
           >
