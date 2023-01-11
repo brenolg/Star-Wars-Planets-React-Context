@@ -61,7 +61,7 @@
   padding: 15px;
   position: absolute;
   right: 1px;
-  transition: all 0.6s  ease-in-out;
+  transition: all 0.4s  ease-in-out;
 }
 
 .delAllFilters {
@@ -75,9 +75,20 @@
   padding: 12px;
   position: sticky;
   top: 1px;
-  transition: all 0.6s  ease-in-out;
+  transition: all 0.4s  ease-in-out;
   width: 22vw;
   z-index: 3;
+}
+
+.delAllFilters:hover {
+  background: #2e3035;
+  box-shadow: 0 0 0 1px #fae60a;
+  color: white;
+}
+
+#delAllFilters:hover, .delSelectedFilter:hover {
+  background: #2e3035;
+  color: white;
 }
 
 .visible {
@@ -86,11 +97,6 @@
 
 .invisible {
   opacity: 0;
-}
-
-#delAllFilters:hover, .delSelectedFilter:hover {
-  background: #2e3035;
-  color: white;
 }
 
 .custom-num {
@@ -102,13 +108,14 @@
   flex-direction: column;
   height: 65px;
   position: relative;
-  transition: all 0.6s  ease-in-out;
+  transition: all 0.4s ease-in-out;
   width: 90px;
 }
 
 .custom-num:hover {
   background-color: #2e3035;
   border: 1px solid #fae60a;
+  box-shadow: 0 0 0 1px #fae60a;
 }
 
 #inputNumber {

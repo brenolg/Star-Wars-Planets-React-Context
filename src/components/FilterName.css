@@ -20,7 +20,12 @@
   font-size: 20px;
   padding: 13px;
   position: relative;
+  transition: all 0.3s linear;
   width: 40vw;
+}
+
+#nameInput:hover {
+  box-shadow: 0 0 1px 1px #fae60a;
 }
 
 #labelName #placeholder {
@@ -39,11 +44,14 @@
   top: -7px;
 }
 
+#nameInput:focus {
+  box-shadow: 0 0 1px 2px #fae60a;
+}
+
 #search {
   pointer-events: none;
   position: absolute;
   right: 30px;
   top: calc(50%);
   transform: translateY(-50%);
-  transition: all 0.6s ease;
 }

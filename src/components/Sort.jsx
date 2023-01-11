@@ -125,6 +125,7 @@ export default function Sort() {
 
         <button
           className="btnFilter"
+          id="sortBtn"
           data-testid="column-sort-button"
           type="button"
           onClick={ handleSort }

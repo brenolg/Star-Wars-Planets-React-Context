@@ -8,6 +8,7 @@ export default function FiltersNumber() {
   const { data, filterData, setFilterData } = useContext(StarWarsContext);
 
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [disabledButton, setDisableButton] = useState(true);
   const [columOptions, setColumOptions] = useState([
     'population',
     'orbital_period',
@@ -43,7 +44,15 @@ export default function FiltersNumber() {
         'surface_water',
         'rotation_period']);
     }
-  }, [selectedFilters]);
+
+    if (columOptions.length > 0 && filter.colum === undefined) {
+      setFilter({
+        number: 0,
+        colum: columOptions[0],
+        comparison: 'maior que',
+      });
+    }
+  }, [selectedFilters, filter]);
 
   // permite somente uma coluna comparison
 
@@ -68,9 +77,19 @@ export default function FiltersNumber() {
     setFilterData(finalDataNumber);
   };
 
+  const hadleEnabled = () => {
+    if (filter.colum === undefined) {
+      setDisableButton(true);
+    }
+    if (filter.colum !== undefined) {
+      setDisableButton(false);
+    }
+  };
+
   useEffect(() => {
     filterByNumber();
-  }, [selectedFilters]);
+    hadleEnabled();
+  }, [selectedFilters, filter.colum]);
 
   // filtra numeros
 
@@ -85,7 +104,6 @@ export default function FiltersNumber() {
     setFilter((prevFilter) => ({
       ...prevFilter, comparison: target.value,
     }));
-    console.log(selectedFilters.length);
   };
 
   const totalSum = (filter.number + 1);
@@ -100,6 +118,15 @@ export default function FiltersNumber() {
       ...prevFilter, number: totalSub,
     }));
   };
+
+  const handleClasBtn = ({ target }) => {
+    if (target === disabled) {
+      target.className = 'disableBtn';
+    } else {
+      target.className = 'enableBtn';
+    }
+  };
+  /// //////
 
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
@@ -131,9 +158,9 @@ export default function FiltersNumber() {
             data-testid="column-filter"
             name="colum-filter"
           >
-            { filter.colum === undefined
-              ? noFilter
-              : filter.colum}
+            { filter.colum !== undefined
+              ? filter.colum
+              : noFilter }
           </div>
 
           <div
@@ -235,12 +262,27 @@ export default function FiltersNumber() {
         </div>
 
         <button
-          className="btnFilter"
+          className={ disabledButton ? 'btnFilter disable'
+            : 'btnFilter enabled' }
           data-testid="button-filter"
           type="button"
+          onChange={ handleClasBtn }
           onClick={ handleFilter }
+          disabled={ disabledButton }
         >
-          Filtrar
+          {disabledButton
+            ? (
+              <>
+                <span className="visible">Sem Filtros</span>
+                <span className="invisible">Filtrar</span>
+              </>)
+            : (
+              <>
+                <span className="invisible">Sem Filtros</span>
+                <span className="visible">Filtrar</span>
+
+              </>
+            )}
         </button>
       </form>
 
