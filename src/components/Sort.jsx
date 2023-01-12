@@ -44,7 +44,6 @@ export default function Sort() {
           <span className="label-select">Ordenar</span>
           <div
             className="dropdown-select  "
-            data-testid="column-sort"
           >
             { columSort }
 
@@ -99,7 +98,6 @@ export default function Sort() {
             <input
               className="radioSort"
               id="input-asc"
-              data-testid="column-sort-input-asc"
               type="radio"
               name="operator"
               value=">"
@@ -112,7 +110,6 @@ export default function Sort() {
             <input
               className="radioSort"
               id="input-desc"
-              data-testid="column-sort-input-desc"
               type="radio"
               name="operator"
               value="<"
@@ -125,7 +122,6 @@ export default function Sort() {
         <button
           className="btnFilter"
           id="sortBtn"
-          data-testid="column-sort-button"
           type="button"
           onClick={ handleSort }
         >

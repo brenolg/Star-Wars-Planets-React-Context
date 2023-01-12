@@ -25,7 +25,6 @@ export default function FilterName() {
         <input
           required
           id="nameInput"
-          data-testid="name-filter"
           name="name-filter"
           type="text"
           onChange={ ({ target }) => setSearchName(target.value) }

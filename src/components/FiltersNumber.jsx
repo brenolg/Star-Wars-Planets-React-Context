@@ -1,13 +1,17 @@
-import { useEffect, useState, useContext, useRef } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import './FilterNumber.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import StarWarsContext from '../context/StarWarsContext';
+import Selected from './Selected';
 
 export default function FiltersNumber() {
-  const { data, filterData, setFilterData } = useContext(StarWarsContext);
-
-  const [selectedFilters, setSelectedFilters] = useState([]);
+  const {
+    data,
+    filterData,
+    setFilterData,
+    selectedFilters,
+    setSelectedFilters } = useContext(StarWarsContext);
   const [disabledButton, setDisableButton] = useState(true);
   const [columOptions, setColumOptions] = useState([
     'population',
@@ -16,14 +20,11 @@ export default function FiltersNumber() {
     'surface_water',
     'rotation_period',
   ]);
-
   const [filter, setFilter] = useState({
     number: 0,
     colum: columOptions[0],
     comparison: 'maior que',
   });
-
-  const selRef = useRef(0);
 
   useEffect(() => {
     if (selectedFilters.length) {
@@ -31,7 +32,6 @@ export default function FiltersNumber() {
         const newOptions = columOptions.filter((option) => (
           option !== selColum.colum
         ));
-
         setFilter({
           number: 0,
           colum: newOptions[0],
@@ -55,8 +55,7 @@ export default function FiltersNumber() {
       });
     }
   }, [selectedFilters, columOptions.length]);
-
-  // permite somente uma coluna comparison
+  // Permite somente uma coluna comparison
 
   const filterByNumber = () => {
     let finalDataNumber = filterData;
@@ -75,9 +74,9 @@ export default function FiltersNumber() {
       });
       return bools.every((el) => el);
     });
-
     setFilterData(finalDataNumber);
   };
+  // Filtra por numero
 
   const hadleEnabled = () => {
     if (filter.colum === undefined) {
@@ -87,23 +86,22 @@ export default function FiltersNumber() {
       setDisableButton(false);
     }
   };
+  // Desabilita btn
+
+  const handleClasBtn = ({ target }) => {
+    if (target === disabled) {
+      target.className = 'disableBtn';
+    } else {
+      target.className = 'enableBtn';
+    }
+  };
+  // Troca classe do botao a ser desabilitado
 
   useEffect(() => {
     filterByNumber();
     hadleEnabled();
   }, [selectedFilters, filter.colum]);
-
-  // filtra numeros
-
-  const handleVisiblity = () => {
-    if (selRef.current !== 0 && selRef.current !== null) {
-      selRef.current.className = 'selectetFilterDiv visible';
-    }
-  };
-
-  useEffect(() => {
-    handleVisiblity();
-  }, [selRef.current]);
+  // Filtra numeros e desabilita btn
 
   const handleFilter = () => {
     setSelectedFilters((prevFilter) => ([
@@ -111,12 +109,14 @@ export default function FiltersNumber() {
       filter,
     ]));
   };
+  // Cria filtros selecionados
 
   const handleOperator = ({ target }) => {
     setFilter((prevFilter) => ({
       ...prevFilter, comparison: target.value,
     }));
   };
+  // Gerencia o estado comparison
 
   const totalSum = (filter.number + 1);
   const totalSub = (filter.number - 1);
@@ -130,49 +130,24 @@ export default function FiltersNumber() {
       ...prevFilter, number: totalSub,
     }));
   };
-
-  const handleClasBtn = ({ target }) => {
-    if (target === disabled) {
-      target.className = 'disableBtn';
-    } else {
-      target.className = 'enableBtn';
-    }
-  };
-
-  const handleDelete = ({ target }) => {
-    const newFilters = selectedFilters
-      .filter((filterDel) => target.name !== filterDel.colum);
-    setSelectedFilters(newFilters);
-    filterByNumber();
-  };
-  // remove o filtro selecionado
-
-  const removeAllFillters = () => {
-    setSelectedFilters([]);
-    filterByNumber();
-  };
-  // remove todos os filtros
+  // Gerenciamento do estado do input number
 
   const noFilter = 'Sem opções';
   return (
-    <section id="numberSelectedSection">
 
+    <section id="numberSelectedSection">
       <form id="filterNumberForm">
 
-        <div
-          className="dropdown"
-        >
+        <div className="dropdown">
           <span className="label-select"> Coluna</span>
           <div
             className="dropdown-select  "
-            data-testid="column-filter"
             name="colum-filter"
           >
             { filter.colum !== undefined
               ? filter.colum
               : noFilter }
           </div>
-
           <div
             className="dropdown-list"
           >
@@ -199,7 +174,6 @@ export default function FiltersNumber() {
           <div
             id="dropdown-select-operator"
             className="dropdown-select   "
-            data-testid="column-sort"
           >
             { filter.comparison }
           </div>
@@ -234,9 +208,7 @@ export default function FiltersNumber() {
           </div>
         </div>
 
-        <div
-          className="custom-num"
-        >
+        <div className="custom-num">
           <button
             id="arrowBtnTop"
             className="arrowBtn"
@@ -249,10 +221,8 @@ export default function FiltersNumber() {
               id="arowUp"
             />
           </button>
-
           <input
             id="inputNumber"
-            data-testid="value-filter"
             type="number"
             value={ filter.number }
             onChange={ ({ target }) => setFilter((prevFilter) => ({
@@ -273,7 +243,6 @@ export default function FiltersNumber() {
         <button
           className={ disabledButton ? 'btnFilter disable'
             : 'btnFilter enabled' }
-          data-testid="button-filter"
           type="button"
           onChange={ handleClasBtn }
           onClick={ handleFilter }
@@ -289,50 +258,11 @@ export default function FiltersNumber() {
               <>
                 <span className="invisible">Sem Filtros</span>
                 <span className="visible">Filtrar</span>
-
               </>
             )}
         </button>
       </form>
-
-      <section id="selectedFiltersSection">
-
-        <button
-          className={ selectedFilters.length >= 1 ? 'delAllFilters visible'
-            : 'delAllFilters invisible' }
-          data-testid="button-remove-filters"
-          type="button"
-          onClick={ removeAllFillters }
-        >
-          Excluir Filtros
-        </button>
-
-        {selectedFilters.map((filters, index) => (
-          <div
-            ref={ selRef }
-            id={ `sel${index}` }
-            className="selectetFilterDiv invisible"
-            data-testid="filter"
-            key={ filters.colum }
-          >
-            <span
-              name={ index }
-            >
-              {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
-            </span>
-            <button
-              className="delFilterBtn"
-              type="button"
-              name={ filters.colum }
-              onClick={ handleDelete }
-            >
-              Excluir
-            </button>
-            <div />
-          </div>
-        ))}
-
-      </section>
+      <Selected />
     </section>
   );
 }
