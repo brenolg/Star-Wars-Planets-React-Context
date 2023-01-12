@@ -31,6 +31,7 @@ export default function FiltersNumber() {
         const newOptions = columOptions.filter((option) => (
           option !== selColum.colum
         ));
+
         setFilter({
           number: 0,
           colum: newOptions[0],
@@ -46,8 +47,7 @@ export default function FiltersNumber() {
         'surface_water',
         'rotation_period']);
     }
-
-    if (columOptions.length > 0 && filter.colum === undefined) {
+    if (filter.colum === undefined) {
       setFilter({
         number: 0,
         colum: columOptions[0],
@@ -164,7 +164,7 @@ export default function FiltersNumber() {
         >
           <span className="label-select"> Coluna</span>
           <div
-            className="dropdown-select , dropdown-select-colum  "
+            className="dropdown-select  "
             data-testid="column-filter"
             name="colum-filter"
           >
@@ -315,13 +315,13 @@ export default function FiltersNumber() {
             data-testid="filter"
             key={ filters.colum }
           >
-            <p
+            <span
               name={ index }
             >
               {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
-            </p>
+            </span>
             <button
-              className="delSelectedFilter"
+              className="delFilterBtn"
               type="button"
               name={ filters.colum }
               onClick={ handleDelete }

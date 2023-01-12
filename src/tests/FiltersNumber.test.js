@@ -118,7 +118,7 @@ userEvent.click(screen.getByText('Filtrar'));
 userEvent.click(screen.getByText('Filtrar'));
 expect(screen.getAllByText('Excluir')).toHaveLength(3);
 
-userEvent.click(screen.getByText('Excluir Todos'));
+userEvent.click(screen.getByText('Excluir Filtros'));
 expect(screen.queryByText('Excluir')).not.toBeInTheDocument();
 
 })

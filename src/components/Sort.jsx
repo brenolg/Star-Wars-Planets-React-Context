@@ -36,7 +36,6 @@ export default function Sort() {
 
   return (
     <>
-
       <form id="sortForm">
 
         <div
@@ -44,7 +43,7 @@ export default function Sort() {
         >
           <span className="label-select">Ordenar</span>
           <div
-            className="dropdown-select , dropdown-select-colum  "
+            className="dropdown-select  "
             data-testid="column-sort"
           >
             { columSort }
