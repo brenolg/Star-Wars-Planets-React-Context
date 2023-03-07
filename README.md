@@ -10,38 +10,39 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 
 # Funcionalidades
 
-Permitir que o usuário pesquise planetas pelo nome;
-Permitir que o usuário pesquise por caracteristicas numericas dos planetas;
-Exibir informações sobre o planeta pesquisado, como clima, terreno e número de filmes em que apareceu;
-Exibir uma lista com todos os planetas da API;
-Permitir que o usuário visualize as informações de cada planeta da lista.
+* Permitir que o usuário pesquise planetas pelo nome;
+* Permitir que o usuário pesquise por caracteristicas numericas dos planetas;
+* Exibir informações sobre o planeta pesquisado, como clima, terreno e número de filmes em que apareceu;
+* Exibir uma lista com todos os planetas da API;
+* Permitir que o usuário visualize as informações de cada planeta da lista.
 
 # Recursos Utilizados
 
 * React
-* React Router
+* JavaScript
+* Filtros em JavaScript
 * Context API
+* Hooks (useState e useEffect) do React
+* React Router
 * HTML
 * CSS
-* Bootstrap
-* JavaScript
 * Jest
 * PropTypes
-* Filtros em JavaScript
-* Hooks (useState e useEffect) do React
+
+
 
 # Requisitos do Projeto
 
-* Utilizar React e Context API para gerenciar o estado da aplicação;
-* Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas;
-* Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista;
-* Permitir que o usuário pesquise planetas pelo nome;
-* Permitir que o usuario pesquise planetas por multiplos valores numéricos
-* Não permitir pesquisar por filtros numericos repetidos
-* Exibir um botao que possibilite deletar um filtro de valor numérico ao clicar 
-* Exibir um botao que possibilite apagar todas filtragens numéricas simultaneamente ao clicar 
-* Permitir que o usuario ordene as colunas de forma ascendente ou descendente
-* Implementar testes utilizando a biblioteca Jest;
+1. Utilizar React e Context API para gerenciar o estado da aplicação;
+2. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas;
+3. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista;
+4. Permitir que o usuário pesquise planetas pelo nome;
+5. Permitir que o usuario pesquise planetas por multiplos valores numéricos
+6. Não permitir pesquisar por filtros numericos repetidos
+7. Exibir um botao que possibilite deletar um filtro de valor numérico ao clicar 
+8. Exibir um botao que possibilite apagar todas filtragens numéricas simultaneamente ao clicar 
+9. Permitir que o usuario ordene as colunas de forma ascendente ou descendente
+ 10. Implementar testes utilizando a biblioteca Jest;
 
 # Tecnologias Utilizadas
 
