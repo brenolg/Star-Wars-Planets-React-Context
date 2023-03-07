@@ -56,3 +56,7 @@ Bootstrap
 JavaScript
 Jest
 PropTypes
+
+Agradecimentos
+
+Agradecemos à Trybe por nos proporcionar a oportunidade de desenvolver este projeto e aprender novas tecnologias. Também agradecemos à comunidade de desenvolvedores que contribui para o desenvolvimento do React, Redux e outras tecnologias utilizadas neste projeto. E, é claro, agradecemos a George Lucas por criar um universo tão incrível que inspira tantas pessoas até hoje.
