@@ -16,7 +16,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * Exibir uma lista com todos os planetas da API;
 * Permitir que o usuário visualize as informações de cada planeta da lista.
 
-# Recursos Utilizados
+# Tecnologias Utilizadas
 
 * React
 * JavaScript
@@ -25,10 +25,9 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * Hooks (useState e useEffect) do React
 * HTML
 * CSS
+* RTL
 * Jest
 * PropTypes
-
-
 
 # Requisitos do Projeto
 
@@ -43,21 +42,6 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 9. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
 10. Implementar testes utilizando a biblioteca Jest;
 
-# Tecnologias Utilizadas
-
-* React
-* React Router
-* Context API
-* HTML
-* CSS
-* Bootstrap
-* JavaScript
-* Jest
-* PropTypes
-
 # Agradecimentos
 
 Agradecemos à Trybe por nos proporcionar a oportunidade de desenvolver este projeto e aprender novas tecnologias. Também agradecemos à comunidade de desenvolvedores que contribui para o desenvolvimento do React, Redux e outras tecnologias utilizadas neste projeto. E, é claro, agradecemos a George Lucas por criar um universo tão incrível que inspira tantas pessoas até hoje.
-
-
-
