@@ -2,7 +2,7 @@
 
 Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stack da Trybe. O objetivo do projeto é criar uma aplicação web que permite ao usuário buscar planetas do universo Star Wars através da API pública disponibilizada pela Lucasfilm Ltd. Foram utilizados filtros em JavaScript para manipular e apresentar os dados dos planetas na aplicação, além dos hooks useState e useEffect do React para gerenciar o estado da aplicação. A Context API do React foi utilizada para permitir o compartilhamento de informações entre componentes da aplicação.
 
-O projeto StarWars Planets tem como objetivos:
+Funcionalidades
 
 Permitir que o usuário pesquise planetas pelo nome;
 Permitir que o usuário pesquise por caracteristicas numericas dos planetas;
