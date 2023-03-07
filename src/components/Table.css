@@ -35,22 +35,26 @@ th:last-child {
   border-top-right-radius: 15px;
 }
 
-th:nth-child( 10 ), th:nth-child( 13 ) {
+th:nth-child(10),
+th:nth-child(13) {
   min-width: 325px;
 }
 
-th:nth-child( 11 ), th:nth-child( 12 ), th:nth-child( 9 ), th:nth-child( 1 ) {
+th:nth-child(11),
+th:nth-child(12),
+th:nth-child(9),
+th:nth-child(1) {
   min-width: 200px;
 }
 
 /* impede sobreposição do th e td */
 main:before {
   background-color: black;
-  content: '';
+  content: "";
   height: 90px;
   margin: 1vw;
   position: absolute;
-  top: 387px;
+  top: 395px;
   width: 87vw;
   z-index: 4;
 }

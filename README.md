@@ -4,6 +4,8 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 
 <br/>
 
+<img width="100%" src="./src/images/starWars.gif" />
+
 <br/>
 
 # Funcionalidades
