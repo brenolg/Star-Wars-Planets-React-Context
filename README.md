@@ -23,7 +23,6 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * Filtros em JavaScript
 * Context API
 * Hooks (useState e useEffect) do React
-* React Router
 * HTML
 * CSS
 * Jest
@@ -42,7 +41,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 7. Exibir um botao que possibilite deletar um filtro de valor numérico ao clicar 
 8. Exibir um botao que possibilite apagar todas filtragens numéricas simultaneamente ao clicar 
 9. Permitir que o usuario ordene as colunas de forma ascendente ou descendente
- 10. Implementar testes utilizando a biblioteca Jest;
+10. Implementar testes utilizando a biblioteca Jest;
 
 # Tecnologias Utilizadas
 
