@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/star-wars-planets/static/css/main.16d88c24.css",
-    "main.js": "/star-wars-planets/static/js/main.ab1b15b5.js",
+    "main.js": "/star-wars-planets/static/js/main.c4e1c27f.js",
     "static/media/ship.png": "/star-wars-planets/static/media/ship.cc04dc0a8dd6b70d3439.png",
     "static/media/deathStar.png": "/star-wars-planets/static/media/deathStar.84b5fe14a1d0de823fc9.png",
     "static/media/xWing.png": "/star-wars-planets/static/media/xWing.ec5eea8978c7b352b5e1.png",
@@ -12,10 +12,10 @@
     "static/media/atat.png": "/star-wars-planets/static/media/atat.b44ef4ffb1fcec7784b3.png",
     "index.html": "/star-wars-planets/index.html",
     "main.16d88c24.css.map": "/star-wars-planets/static/css/main.16d88c24.css.map",
-    "main.ab1b15b5.js.map": "/star-wars-planets/static/js/main.ab1b15b5.js.map"
+    "main.c4e1c27f.js.map": "/star-wars-planets/static/js/main.c4e1c27f.js.map"
   },
   "entrypoints": [
     "static/css/main.16d88c24.css",
-    "static/js/main.ab1b15b5.js"
+    "static/js/main.c4e1c27f.js"
   ]
 }
