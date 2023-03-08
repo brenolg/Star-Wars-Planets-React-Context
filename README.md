@@ -6,6 +6,11 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 
 <img width="100%" src="./src/images/starWars.gif" />
 
+<a	href="https://brenolg.github.io/star-wars-planets/"
+	target="_blank"
+	rel="noopener noreferrer"> Star Wars Planets Page 
+<a/>
+
 <br/>
 
 # Funcionalidades
