@@ -1,4 +1,4 @@
-# Projeto StarWars Planets 
+# Projeto StarWars Planets
 
 Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stack da Trybe. O objetivo do projeto é criar uma aplicação web que permite ao usuário buscar planetas do universo Star Wars através da API pública disponibilizada pela Lucasfilm Ltd. Foram utilizados filtros em JavaScript para manipular e apresentar os dados dos planetas na aplicação, além dos hooks useState e useEffect do React para gerenciar o estado da aplicação. A Context API do React foi utilizada para permitir o compartilhamento de informações entre componentes da aplicação.
 
@@ -8,7 +8,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 
 <a	href="https://brenolg.github.io/star-wars-planets/"
 	target="_blank"
-	rel="noopener noreferrer"> Star Wars Planets Page 
+	rel="noopener noreferrer"> Star Wars Planets Page
 <a/>
 
 <br/>
@@ -18,6 +18,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * Permitir que o usuário pesquise planetas pelo nome;
 * Permitir que o usuário pesquise por características numéricas dos planetas;
 * Exibir informações sobre o planeta pesquisado, como clima, terreno e número de filmes em que apareceu;
+* Organizar dados de forma acendente ou descendente;
 * Exibir uma lista com todos os planetas da API;
 * Permitir que o usuário visualize as informações de cada planeta da lista.
 
@@ -33,6 +34,30 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * RTL
 * Jest
 * PropTypes
+## Instalação do projeto localmente
+
+Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/star-wars-planets/).
+
+Caso queira rodar local mesmo assim, siga o tutorial abaixo.
+
+Após cada um dos passos, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido, caso tenha dificuldades e o exemplo não seja suficiente, não hesite em me contatar em _brenolgar@gmail.com_.
+
+1. Abra o terminal e crie um diretório no local de sua preferência com o comando **mkdir**:
+```javascript
+  mkdir projetos
+```
+2. Entre no diretório que acabou de criar e depois clone o projeto:
+```javascript
+  cd projetos
+  git clone git@github.com:brenolg/star-wars-planets.git
+```
+3. Acesse o diretório do projeto e depois utilize o comando npm i para instalar todas as dependências necessárias:
+```javascript
+  cd star-wars-planets
+  npm i
+```
+Por último, rode o comando npm start e acesse o projeto via browser, no caminho http://localhost:3000/star-wars-planets.
+---
 
 # Requisitos do Projeto
 
@@ -42,10 +67,11 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 4. Permitir que o usuário pesquise planetas pelo nome;
 5. Permitir que o usuário pesquise planetas por múltiplos valores numéricos
 6. Não permitir pesquisar por filtros numéricos repetidos
-7. Exibir um botão que possibilite deletar um filtro de valor numérico ao clicar 
-8. Exibir um botão que possibilite  todas filtragens numéricas simultaneamente ao clicar 
-9. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
-10. Implementar testes utilizando a biblioteca Jest;
+7. Exibir um botão que possibilite deletar um filtro de valor numérico ao clicar
+8. Exibir um botão que possibilite deletat todas filtragens numéricas simultaneamente ao clicar
+9. Quando não houver mais filtros disponiveis o botão ficara desabilitado
+10. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
+11. Implementar testes utilizando a biblioteca Jest;
 
 # Agradecimentos
 
