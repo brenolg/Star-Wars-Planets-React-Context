@@ -56,7 +56,7 @@ Após cada um dos passos, haverá um exemplo do comando a ser digitado para faze
   cd star-wars-planets
   npm i
 ```
-Por último, rode o comando npm start e acesse o projeto via browser, no caminho http://localhost:3000/star-wars-planets.
+4. Por último, rode o comando npm start e acesse o projeto via browser, no caminho http://localhost:3000/star-wars-planets.
 ---
 
 # Requisitos do Projeto
