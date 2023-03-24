@@ -1,7 +1,7 @@
 {
   "name": "sd-0x-project-react-context-hooks-starwars-datatable-filters",
   "version": "0.1.0",
-  "homepage": "https://brenolg.github.io/star-wars-planets",
+  "homepage": "https://brenolg.github.io/Star-Wars-Planets",
   "private": true,
   "engines": {
     "node": "16 || 18"
