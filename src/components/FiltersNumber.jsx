@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import StarWarsContext from '../context/StarWarsContext';
 import Selected from './Selected';
+import showTextButton from '../services/showSpanBtn';
 
 export default function FiltersNumber() {
   const {
@@ -54,8 +55,7 @@ export default function FiltersNumber() {
         comparison: 'maior que',
       });
     }
-  }, [selectedFilters, columOptions.length]);
-  // Permite somente uma coluna comparison
+  }, [selectedFilters, columOptions.length]); // Permite somente uma coluna comparison
 
   const filterByNumber = () => {
     let finalDataNumber = filterData;
@@ -75,8 +75,7 @@ export default function FiltersNumber() {
       return bools.every((el) => el);
     });
     setFilterData(finalDataNumber);
-  };
-  // Filtra por numero
+  }; // Filtra por numero
 
   const hadleEnabled = () => {
     if (filter.colum === undefined) {
@@ -85,8 +84,7 @@ export default function FiltersNumber() {
     if (filter.colum !== undefined) {
       setDisableButton(false);
     }
-  };
-  // Desabilita btn
+  }; // Desabilita btn
 
   const handleClasBtn = ({ target }) => {
     if (target === disabled) {
@@ -94,29 +92,25 @@ export default function FiltersNumber() {
     } else {
       target.className = 'enableBtn';
     }
-  };
-  // Troca classe do botao a ser desabilitado
+  }; // Troca classe do botao a ser desabilitado
 
   useEffect(() => {
     filterByNumber();
     hadleEnabled();
-  }, [selectedFilters, filter.colum]);
-  // Filtra numeros e desabilita btn
+  }, [selectedFilters, filter.colum]); // Filtra numeros e desabilita btn
 
   const handleFilter = () => {
     setSelectedFilters((prevFilter) => ([
       ...prevFilter,
       filter,
     ]));
-  };
-  // Cria filtros selecionados
+  }; // Cria filtros selecionados
 
   const handleOperator = ({ target }) => {
     setFilter((prevFilter) => ({
       ...prevFilter, comparison: target.value,
     }));
-  };
-  // Gerencia o estado comparison
+  }; // Gerencia o estado comparison
 
   const totalSum = (filter.number + 1);
   const totalSub = (filter.number - 1);
@@ -129,8 +123,7 @@ export default function FiltersNumber() {
     setFilter((prevFilter) => ({
       ...prevFilter, number: totalSub,
     }));
-  };
-  // Gerenciamento do estado do input number
+  }; // Gerenciamento do estado do input number
 
   const noFilter = 'Sem opções';
   return (
@@ -248,18 +241,7 @@ export default function FiltersNumber() {
           onClick={ handleFilter }
           disabled={ disabledButton }
         >
-          {disabledButton
-            ? (
-              <>
-                <span className="visible">Sem Filtros</span>
-                <span className="invisible">Filtrar</span>
-              </>)
-            : (
-              <>
-                <span className="invisible">Sem Filtros</span>
-                <span className="visible">Filtrar</span>
-              </>
-            )}
+          {showTextButton(disabledButton)}
         </button>
       </form>
       <Selected />
