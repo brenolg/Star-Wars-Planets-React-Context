@@ -1,4 +1,4 @@
-# Projeto StarWars Planets
+# Projeto Star Wars Planets
 
 Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stack da Trybe. O objetivo do projeto é criar uma aplicação web que permite ao usuário buscar planetas do universo Star Wars através da API pública disponibilizada pela Lucasfilm Ltd. Foram utilizados filtros em JavaScript para manipular e apresentar os dados dos planetas na aplicação, além dos hooks useState e useEffect do React para gerenciar o estado da aplicação. A Context API do React foi utilizada para permitir o compartilhamento de informações entre componentes da aplicação.
 
@@ -15,10 +15,10 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 
 # Funcionalidades
 
-* Permitir que o usuário pesquise planetas pelo nome;
-* Permitir que o usuário pesquise por características numéricas dos planetas;
+* Permitir que o usuário filtre planetas pelo nome;
+* Permitir que o usuário filtre por características numéricas dos planetas;
 * Exibir informações sobre o planeta pesquisado, como clima, terreno e número de filmes em que apareceu;
-* Organizar dados de forma acendente ou descendente;
+* Organizar dados de forma ascendente ou descendente;
 * Exibir uma lista com todos os planetas da API;
 * Permitir que o usuário visualize as informações de cada planeta da lista.
 
@@ -61,17 +61,17 @@ Após cada um dos passos, haverá um exemplo do comando a ser digitado para faze
 
 # Requisitos do Projeto
 
-1. Utilizar React e Context API para gerenciar o estado da aplicação;
-2. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas;
-3. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista;
-4. Permitir que o usuário pesquise planetas pelo nome;
+1. Utilizar React e Context API para gerenciar o estado da aplicação
+2. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas
+3. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista
+4. Permitir que o usuário pesquise planetas pelo nome
 5. Permitir que o usuário pesquise planetas por múltiplos valores numéricos
 6. Não permitir pesquisar por filtros numéricos repetidos
-7. Exibir um botão que possibilite deletar um filtro de valor numérico ao clicar
-8. Exibir um botão que possibilite deletat todas filtragens numéricas simultaneamente ao clicar
-9. Quando não houver mais filtros disponiveis o botão ficara desabilitado
+7. Exibir um botão que possibilita deletar um filtro de valor numérico ao clicar
+8. Exibir um botão que possibilita deletar todas filtragens numéricas simultaneamente ao clicar
+9. Quando não houver mais filtros disponíveis o botão ficará desabilitado
 10. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
-11. Implementar testes utilizando a biblioteca Jest;
+11. Implementar testes utilizando o framework Jest
 
 # Agradecimentos
 
