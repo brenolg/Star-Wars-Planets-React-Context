@@ -6,7 +6,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 
 <img width="100%" src="./src/images/starWars.gif" />
 
-<a	href="https://brenolg.github.io/star-wars-planets/"
+<a	href="https://brenolg.github.io/Star-Wars-Planets/"
 	target="_blank"
 	rel="noopener noreferrer"> Star Wars Planets Page
 <a/>
@@ -36,7 +36,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * PropTypes
 ## Instalação do projeto localmente
 
-Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/star-wars-planets/).
+Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/Star-Wars-Planets/).
 
 Caso queira rodar local mesmo assim, siga o tutorial abaixo.
 
@@ -49,11 +49,11 @@ Após cada um dos passos, haverá um exemplo do comando a ser digitado para faze
 2. Entre no diretório que acabou de criar e depois clone o projeto:
 ```javascript
   cd projetos
-  git clone git@github.com:brenolg/star-wars-planets.git
+  git clone git@github.com:brenolg/Star-Wars-Planets.git
 ```
 3. Acesse o diretório do projeto e depois utilize o comando npm i para instalar todas as dependências necessárias:
 ```javascript
-  cd star-wars-planets
+  cd Star-Wars-Planets
   npm i
 ```
 4. Por último, rode o comando npm start e acesse o projeto via browser, no caminho http://localhost:3000/star-wars-planets.
