@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Star-Wars-Planets-React-Context/static/css/main.16d88c24.css",
-    "main.js": "/Star-Wars-Planets-React-Context/static/js/main.cabb1411.js",
+    "main.css": "/Star-Wars-Planets-React-Context/static/css/main.260d7e0f.css",
+    "main.js": "/Star-Wars-Planets-React-Context/static/js/main.59789066.js",
     "static/media/ship.png": "/Star-Wars-Planets-React-Context/static/media/ship.cc04dc0a8dd6b70d3439.png",
     "static/media/deathStar.png": "/Star-Wars-Planets-React-Context/static/media/deathStar.84b5fe14a1d0de823fc9.png",
     "static/media/xWing.png": "/Star-Wars-Planets-React-Context/static/media/xWing.ec5eea8978c7b352b5e1.png",
@@ -11,11 +11,11 @@
     "static/media/starWars.png": "/Star-Wars-Planets-React-Context/static/media/starWars.23037d122e36f6d0b71a.png",
     "static/media/atat.png": "/Star-Wars-Planets-React-Context/static/media/atat.b44ef4ffb1fcec7784b3.png",
     "index.html": "/Star-Wars-Planets-React-Context/index.html",
-    "main.16d88c24.css.map": "/Star-Wars-Planets-React-Context/static/css/main.16d88c24.css.map",
-    "main.cabb1411.js.map": "/Star-Wars-Planets-React-Context/static/js/main.cabb1411.js.map"
+    "main.260d7e0f.css.map": "/Star-Wars-Planets-React-Context/static/css/main.260d7e0f.css.map",
+    "main.59789066.js.map": "/Star-Wars-Planets-React-Context/static/js/main.59789066.js.map"
   },
   "entrypoints": [
-    "static/css/main.16d88c24.css",
-    "static/js/main.cabb1411.js"
+    "static/css/main.260d7e0f.css",
+    "static/js/main.59789066.js"
   ]
 }
