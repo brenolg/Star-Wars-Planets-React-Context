@@ -27,10 +27,6 @@ export default function Header() {
         id="ships"
         src={ xWing }
         alt="ship"
-        style={ {
-
-          ...animationProps,
-        } }
       />
 
       <img

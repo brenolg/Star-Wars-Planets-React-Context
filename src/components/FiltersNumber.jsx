@@ -244,7 +244,7 @@ export default function FiltersNumber() {
           {showTextButton(disabledButton)}
         </button>
       </form>
-      <Selected />
+      <Selected filterByNumber={filterByNumber} />
     </section>
   );
 }
