@@ -1,12 +1,15 @@
-import logoStarWars from '../images/starWars.png';
-import './Header.css';
-import millennium from '../images/millennium.png';
-import xWing from '../images/xWing.png';
+import React from 'react';
 import deathStar from '../images/deathStar.png';
+import millennium from '../images/millennium.png';
+import logoStarWars from '../images/starWars.png';
+import tieFighter from '../images/tie-fighter.png';
+import xWing from '../images/xWing.png';
+import './Header.css';
 
 export default function Header() {
   return (
     <header>
+      <img src={ tieFighter } className="tie-fighter" alt="tie-fighter" />
 
       <img
         id="starWars"
@@ -21,9 +24,13 @@ export default function Header() {
       />
 
       <img
-        id="xWing"
+        id="ships"
         src={ xWing }
         alt="ship"
+        style={ {
+
+          ...animationProps,
+        } }
       />
 
       <img

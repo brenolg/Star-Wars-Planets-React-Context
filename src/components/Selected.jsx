@@ -1,22 +1,23 @@
-import { useContext, useRef, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import './Selected.css';
 
 export default function Selected() {
   const { selectedFilters, setSelectedFilters } = useContext(StarWarsContext);
   const selRef = useRef(0);
 
-  const handleVisiblity = () => {
+  const handleVisibility = () => {
     if (selRef.current !== 0 && selRef.current !== null) {
-      selRef.current.className = 'selectetFilterDiv visible';
+      selRef.current.className = 'selectedFilterDiv visible';
     }
   };
   // Permite a visibilidade dos filtros selecionados
 
   useEffect(() => {
-    handleVisiblity();
+    handleVisibility();
   }, [selRef.current]);
 
-  const removeAllFillters = () => {
+  const removeAllFilters = () => {
     setSelectedFilters([]);
     filterByNumber();
   };
@@ -24,7 +25,7 @@ export default function Selected() {
 
   const handleDelete = ({ target }) => {
     const newFilters = selectedFilters
-      .filter((filterDel) => target.name !== filterDel.colum);
+      .filter((filterDel) => target.name !== filterDel.column);
     setSelectedFilters(newFilters);
     filterByNumber();
   };
@@ -37,7 +38,7 @@ export default function Selected() {
         className={ selectedFilters.length >= 1 ? 'delAllFilters visible'
           : 'delAllFilters invisible' }
         type="button"
-        onClick={ removeAllFillters }
+        onClick={ removeAllFilters }
       >
         Excluir Filtros
       </button>
@@ -46,18 +47,18 @@ export default function Selected() {
         <div
           ref={ selRef }
           id={ `sel${index}` }
-          className="selectetFilterDiv invisible"
-          key={ filters.colum }
+          className="selectedFilterDiv invisible"
+          key={ filters.column }
         >
           <span
             name={ index }
           >
-            {`Filtro: ${filters.colum} ${filters.comparison} ${filters.number}`}
+            {`Filtro: ${filters.column} ${filters.comparison} ${filters.number}`}
           </span>
           <button
             className="delFilterBtn"
             type="button"
-            name={ filters.colum }
+            name={ filters.column }
             onClick={ handleDelete }
           >
             Excluir

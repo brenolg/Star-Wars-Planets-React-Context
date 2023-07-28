@@ -1,15 +1,15 @@
-import { useEffect, useState, useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
-import './Sort.css';
 import atat from '../images/atat.png';
-import walker from '../images/walker.png';
 import ship from '../images/ship.png';
+import walker from '../images/walker.png';
+import './Sort.css';
 
 export default function Sort() {
   const { data, dataFunc } = useContext(StarWarsContext);
 
   const [operator, setOperator] = useState('>');
-  const [columSort, setColumSort] = useState('population');
+  const [columnSort, setColumSort] = useState('population');
   const [filterSort, setFilterSort] = useState([]);
 
   useEffect(() => {
@@ -21,21 +21,21 @@ export default function Sort() {
   };
 
   const handleSort = () => {
-    const unknowns = data.filter((planet) => planet[columSort] === 'unknown');
-    const knows = data.filter((planet) => planet[columSort] !== 'unknown');
+    const unknowns = data.filter((planet) => planet[columnSort] === 'unknown');
+    const knows = data.filter((planet) => planet[columnSort] !== 'unknown');
 
     knows.sort((a, b) => {
       if (operator === '>') {
-        return Number(a[columSort]) - Number(b[columSort]);
+        return Number(a[columnSort]) - Number(b[columnSort]);
       }
-      return Number(b[columSort]) - Number(a[columSort]);
+      return Number(b[columnSort]) - Number(a[columnSort]);
     });
     const newSort = [...knows, ...unknowns];
     setFilterSort(newSort);
   };
 
   return (
-    <>
+    <section id="sort-section">
       <form id="sortForm">
 
         <div
@@ -45,12 +45,12 @@ export default function Sort() {
           <div
             className="dropdown-select  "
           >
-            { columSort }
+            { columnSort }
 
           </div>
           <div className="dropdown-list">
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="population"
               onClick={ handleColum }
@@ -58,7 +58,7 @@ export default function Sort() {
               population
             </button>
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="orbital_period"
               onClick={ handleColum }
@@ -66,7 +66,7 @@ export default function Sort() {
               orbital_period
             </button>
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="diameter"
               onClick={ handleColum }
@@ -74,7 +74,7 @@ export default function Sort() {
               diameter
             </button>
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="surface_water"
               onClick={ handleColum }
@@ -82,7 +82,7 @@ export default function Sort() {
               surface_water
             </button>
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="rotation_period"
               onClick={ handleColum }
@@ -129,24 +129,26 @@ export default function Sort() {
         </button>
       </form>
 
-      <img
-        id="atat"
-        src={ atat }
-        alt="atat"
-      />
+      <section className="img-section">
+        <img
+          id="atat"
+          src={ atat }
+          alt="atat"
+        />
 
-      <img
-        id="walker"
-        src={ walker }
-        alt="walker"
-      />
+        <img
+          id="walker"
+          src={ walker }
+          alt="walker"
+        />
 
-      <img
-        id="ship"
-        src={ ship }
-        alt="ship"
-      />
-    </>
+        <img
+          id="ship"
+          src={ ship }
+          alt="ship"
+        />
+      </section>
+    </section>
 
   );
 }

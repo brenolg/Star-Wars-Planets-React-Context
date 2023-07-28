@@ -1,13 +1,15 @@
 #nameForm {
   align-items: center;
   display: flex;
-  margin-top: 4vh;
-  padding: 20px;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
 }
 
 #labelName {
-  font-size: 20px;
+  font-size: 2rem;
   position: relative;
+  width: 50%;
 }
 
 #nameInput {
@@ -15,21 +17,26 @@
   background-color: black;
   border: 1px solid white;
   border-radius: 10px;
+  box-shadow: 0 0 5px white , inset 0 0 2.5px white;
   color: white;
   cursor: pointer;
-  font-size: 20px;
-  padding: 13px;
+  font-size: 2rem;
+  padding: 0.8em;
   position: relative;
   transition: all 0.3s linear;
-  width: 40vw;
+  width: 100%;
+}
+
+#nameInput:focus {
+  box-shadow: 0 0 8px yellow , inset 0 0 5px white;
 }
 
 #nameInput:hover {
-  box-shadow: 0 0 1px 1px #fae60a;
+  box-shadow: 0 0 10px yellow , inset 0 0 5px white;
 }
 
 #labelName #placeholder {
-  left: 30px;
+  left: 3rem;
   pointer-events: none;
   position: absolute;
   top: calc(50%);
@@ -38,20 +45,63 @@
 }
 
 #labelName input:valid + #placeholder, #labelName input:focus + #placeholder {
-  color: #fae60a;
-  font-size: 16px;
-  font-weight: 900;
+  color: yellow;
+  font-size: 1.6rem;
   top: -7px;
-}
-
-#nameInput:focus {
-  box-shadow: 0 0 1px 2px #fae60a;
 }
 
 #search {
   pointer-events: none;
   position: absolute;
-  right: 30px;
+  right: 3rem;
   top: calc(50%);
   transform: translateY(-50%);
+}
+
+label {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 900;
+  padding: 1rem;
+}
+
+@media screen and ( max-width : 1250px ) {
+
+  #nameForm {
+    margin-bottom: 3rem;
+    margin-top: 8rem;
+  }
+
+  #labelName {
+    width: 70%;
+  }
+}
+
+@media screen and ( max-width : 650px ) {
+
+  .labelSort {
+    font-size: 1.2rem;
+  }
+
+  #labelName {
+    width: 82%;
+  }
+
+  #nameForm {
+    margin-top: 5rem;
+  }
+
+  #placeholder {
+    font-size: 1.4rem;
+    padding: 0.6em;
+  }
+
+  #nameInput {
+    padding: 0.6em;
+  }
+
+  #labelName #placeholder {
+    left: 1.6rem;
+
+  }
 }

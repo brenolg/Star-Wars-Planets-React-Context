@@ -1,10 +1,16 @@
+#sort-section {
+  width: 45%;
+}
+
 #sortForm {
   align-items: center;
   display: flex;
+  flex-flow: wrap;
   flex-direction: row;
-  height: 15vh;
-  justify-content: space-around;
-  width: 40%;
+  justify-content: space-between;
+  min-height: 15vh;
+  padding-left: 12%;
+  width: 100%;
 }
 
 .operatorSort {
@@ -26,23 +32,28 @@
   border-radius: 50%;
   cursor: pointer;
   display: flex;
-  height: 20px;
+  height: 2rem;
   justify-content: center;
-  margin-right: 10px;
+  margin-right: 1rem;
   outline: none;
   position: relative;
-  width: 20px;
+  transition: all 0.4s ease-in-out;
+  width: 2rem;
+}
+
+.radioSort:hover {
+  box-shadow: 0 0 5px  white , inset 0 0 3px yellow;
 }
 
 .radioSort:before {
   background-color: #fae60a;
   border-radius: 50%;
   content: '';
-  height: 10px;
+  height: 1rem;
   opacity: 0;
   position: absolute;
   transition: all 0.4s ease-in-out;
-  width: 10px;
+  width: 1rem;
 }
 
 .radioSort:checked:before {
@@ -53,26 +64,81 @@
   padding: 22px;
 }
 
-#atat {
+.img-section {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
   height: 20vh;
-  left: 43vw;
-  position: absolute;
-  top: 249px;
+  justify-content: space-between;
+}
+
+#atat {
+  max-height: 100%;
+  max-width: 50%;
+  transform: translate(0, 12%);
   z-index: 3;
 }
 
 #walker {
-  height: 13vh;
-  position: absolute;
-  right: 12vw;
-  top: 302px;
+  max-height: 100%;
+  max-width: 9%;
+  transform: translate(0, 12%);
   z-index: 3;
 }
 
 #ship {
-  height: 5vh;
-  left: 35vw;
-  position: absolute;
-  top: 33vh;
+  max-height: 100%;
+  max-width: 12%;
+  transform: translate(-25%, -172%);
   z-index: 3;
 }
+
+@media screen and ( max-width : 1350px ) {
+
+  #sortForm {
+    padding-left: 8%;
+  }
+}
+
+@media screen and ( max-width : 1250px ) {
+
+  #sort-section {
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+
+  #sortForm {
+    justify-content: space-between;
+    margin: auto;
+    padding-left: 0%;
+    width: 80%;
+  }
+
+  #sortForm .dropdown {
+    margin: 0;
+    width: fit-content;
+  }
+
+  .img-section {
+    display: none;
+  }
+}
+
+@media screen and ( max-width : 650px ) {
+
+  #sort-section {
+    margin-top: 2rem;
+  }
+
+  #sortForm {
+    gap: 3rem;
+    justify-content: space-around;
+  }
+
+  #sortForm .dropdown {
+    margin: 0;
+    width: 100%;
+  }
+
+}
+

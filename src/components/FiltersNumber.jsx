@@ -1,10 +1,10 @@
-import { useEffect, useState, useContext } from 'react';
-import './FilterNumber.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext, useEffect, useState } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
-import Selected from './Selected';
 import showTextButton from '../services/showSpanBtn';
+import './FilterNumber.css';
+import Selected from './Selected';
 
 export default function FiltersNumber() {
   const {
@@ -14,7 +14,7 @@ export default function FiltersNumber() {
     selectedFilters,
     setSelectedFilters } = useContext(StarWarsContext);
   const [disabledButton, setDisableButton] = useState(true);
-  const [columOptions, setColumOptions] = useState([
+  const [columnOptions, setColumOptions] = useState([
     'population',
     'orbital_period',
     'diameter',
@@ -23,19 +23,19 @@ export default function FiltersNumber() {
   ]);
   const [filter, setFilter] = useState({
     number: 0,
-    colum: columOptions[0],
+    column: columnOptions[0],
     comparison: 'maior que',
   });
 
   useEffect(() => {
     if (selectedFilters.length) {
       selectedFilters.forEach((selColum) => {
-        const newOptions = columOptions.filter((option) => (
-          option !== selColum.colum
+        const newOptions = columnOptions.filter((option) => (
+          option !== selColum.column
         ));
         setFilter({
           number: 0,
-          colum: newOptions[0],
+          column: newOptions[0],
           comparison: 'maior que',
         });
         setColumOptions(newOptions);
@@ -48,14 +48,14 @@ export default function FiltersNumber() {
         'surface_water',
         'rotation_period']);
     }
-    if (filter.colum === undefined) {
+    if (filter.column === undefined) {
       setFilter({
         number: 0,
-        colum: columOptions[0],
+        column: columnOptions[0],
         comparison: 'maior que',
       });
     }
-  }, [selectedFilters, columOptions.length]); // Permite somente uma coluna comparison
+  }, [selectedFilters, columnOptions.length]); // Permite somente uma coluna comparison
 
   const filterByNumber = () => {
     let finalDataNumber = filterData;
@@ -63,13 +63,13 @@ export default function FiltersNumber() {
       const bools = [];
       selectedFilters.forEach((filterS) => {
         if (filterS.comparison === 'maior que') {
-          return (bools.push(Number(line[filterS.colum]) > Number(filterS.number)));
+          return (bools.push(Number(line[filterS.column]) > Number(filterS.number)));
         }
         if (filterS.comparison === 'menor que') {
-          return (bools.push(Number(line[filterS.colum]) < Number(filterS.number)));
+          return (bools.push(Number(line[filterS.column]) < Number(filterS.number)));
         }
         if (filterS.comparison === 'igual a') {
-          return (bools.push(Number(line[filterS.colum]) === Number(filterS.number)));
+          return (bools.push(Number(line[filterS.column]) === Number(filterS.number)));
         }
       });
       return bools.every((el) => el);
@@ -77,27 +77,27 @@ export default function FiltersNumber() {
     setFilterData(finalDataNumber);
   }; // Filtra por numero
 
-  const hadleEnabled = () => {
-    if (filter.colum === undefined) {
+  const handleEnabled = () => {
+    if (filter.column === undefined) {
       setDisableButton(true);
     }
-    if (filter.colum !== undefined) {
+    if (filter.column !== undefined) {
       setDisableButton(false);
     }
   }; // Desabilita btn
 
-  const handleClasBtn = ({ target }) => {
+  const handleClassBtn = ({ target }) => {
     if (target === disabled) {
       target.className = 'disableBtn';
     } else {
       target.className = 'enableBtn';
     }
-  }; // Troca classe do botao a ser desabilitado
+  }; // Troca classe do botão a ser desabilitado
 
   useEffect(() => {
     filterByNumber();
-    hadleEnabled();
-  }, [selectedFilters, filter.colum]); // Filtra numeros e desabilita btn
+    handleEnabled();
+  }, [selectedFilters, filter.column]); // Filtra números e desabilita btn
 
   const handleFilter = () => {
     setSelectedFilters((prevFilter) => ([
@@ -134,24 +134,24 @@ export default function FiltersNumber() {
         <div className="dropdown">
           <span className="label-select"> Coluna</span>
           <div
-            className="dropdown-select  "
-            name="colum-filter"
+            className="dropdown-select"
+            name="column-filter"
           >
-            { filter.colum !== undefined
-              ? filter.colum
+            { filter.column !== undefined
+              ? filter.column
               : noFilter }
           </div>
           <div
             className="dropdown-list"
           >
-            {columOptions.map((option, index) => (
+            {columnOptions.map((option, index) => (
               <button
-                className="dropddown-item"
+                className="dropdown-item"
                 type="button"
                 key={ index }
                 value={ option }
                 onClick={ ({ target }) => setFilter((prevFilter) => ({
-                  ...prevFilter, colum: target.value,
+                  ...prevFilter, column: target.value,
                 })) }
               >
                 {option}
@@ -175,7 +175,7 @@ export default function FiltersNumber() {
             value={ filter.comparison }
           >
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="maior que"
               onClick={ handleOperator }
@@ -183,7 +183,7 @@ export default function FiltersNumber() {
               maior que
             </button>
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="menor que"
               onClick={ handleOperator }
@@ -191,7 +191,7 @@ export default function FiltersNumber() {
               menor que
             </button>
             <button
-              className="dropddown-item"
+              className="dropdown-item"
               type="button"
               value="igual a"
               onClick={ handleOperator }
@@ -211,7 +211,7 @@ export default function FiltersNumber() {
           >
             <FontAwesomeIcon
               icon={ faChevronUp }
-              id="arowUp"
+              id="arrowUp"
             />
           </button>
           <input
@@ -229,7 +229,7 @@ export default function FiltersNumber() {
             value={ filter.number }
             onClick={ subNumber }
           >
-            <FontAwesomeIcon icon={ faChevronDown } id="arowDown" />
+            <FontAwesomeIcon icon={ faChevronDown } id="arrowDown" />
           </button>
         </div>
 
@@ -237,7 +237,7 @@ export default function FiltersNumber() {
           className={ disabledButton ? 'btnFilter disable'
             : 'btnFilter enabled' }
           type="button"
-          onChange={ handleClasBtn }
+          onChange={ handleClassBtn }
           onClick={ handleFilter }
           disabled={ disabledButton }
         >

@@ -1,9 +1,9 @@
+import './AllFilters.css';
 import FilterName from './FilterName';
 import FiltersNumber from './FiltersNumber';
 import Sort from './Sort';
-import './AllFilters.css';
 
-export default function AllFillters() {
+export default function AllFilters() {
   return (
     <>
       <section id="nameSection">
