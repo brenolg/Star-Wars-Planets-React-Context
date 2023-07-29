@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import requestApi from '../services/requestAPI';
 import StarWarsContext from './StarWarsContext';
 
-export function StarWarsProvider({ children }) {
+export default function StarWarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState([]);

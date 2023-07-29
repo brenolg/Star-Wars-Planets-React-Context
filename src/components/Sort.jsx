@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 import atat from '../images/atat.png';
-import ship from '../images/ship.png';
+import t47 from '../images/t47.png';
 import walker from '../images/walker.png';
 import './Sort.css';
 
@@ -144,8 +144,8 @@ export default function Sort() {
 
         <img
           id="ship"
-          src={ ship }
-          alt="ship"
+          src={ t47 }
+          alt="t-47"
         />
       </section>
     </section>

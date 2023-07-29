@@ -11,6 +11,7 @@ header {
 
 #starWars {
   height: 20vh;
+  z-index: 3;
 }
 
 #falcon {
@@ -19,16 +20,16 @@ header {
   position: absolute;
   transform: translate(-16%, 50%);
   width: 25vw;
-  z-index: 3;
+  z-index: 5;
 }
 
 #ships {
   bottom: 0;
   position: absolute;
   right: 0;
-  transform: translate(16%, 40%);
+  transform: translate(16%, 35%);
   width: 25vw;
-  z-index: 3;
+  z-index: 5;
 }
 
 #deathStar {
@@ -36,70 +37,248 @@ header {
   right: 0;
   top: 1vh;
   width: 10vw;
-  z-index: 3;
+  z-index: -1;
 }
 
 .tie-fighter {
-  animation: tie-fly 5s linear infinite;
-  height: 8vw;
+  animation: tie-fly 16s linear infinite;
+  animation-delay: 1s;
+  left: -20vw;
   position: absolute;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s ease-in-out;
-  z-index: 99;
+  width: 12vw;
+  z-index: 4;
 }
 
 @keyframes tie-fly {
 
   0% {
-    left: -10vw;
-    top: 40%;
-    transform: translate(-50%, -50%);
+    left: -15vw;
+    top: 5%;
   }
 
-  15% {
-    transform: translate(-50%, -58%);
+  25% {
+    left: 115vw;
+    top: 25%;
   }
 
-  28% {
-    transform: translate(-50%, -62%);
-  }
-
-  35% {
-    transform: translate(-50%, -59%);
-  }
-
-  45% {
-    transform: translate(-50%, -44%);
-  }
-
-  48% {
-    transform: translate(-50%, -36%);
-  }
-
-  50% {
-    transform: translate(-50%, -29%);
-  }
-
-  55% {
-    transform: translate(-50%, -30%);
-  }
-
-  58% {
-    transform: translate(-50%, -35%);
-  }
-
-  65% {
-    transform: translate(-50%, -45%);
-  }
-
-  80% {
-    transform: translate(-50%, -60%);
+  26% {
+    display: none;
   }
 
   100% {
-    left: 110vw;
-    top: 30%;
-    transform: translate(-50%, -50%);
+    display: none;
+    left: 115vw;
   }
+}
+
+.x-fighter {
+  animation: x-fly 16s linear infinite forwards;
+  animation-delay: 1.9s;
+  left: -20vw;
+  position: absolute;
+  width: 10.5vw;
+  z-index: 2;
+}
+
+@keyframes x-fly {
+
+  0% {
+    left: -15vw;
+    top: 25%;
+  }
+
+  28% {
+    left: 115vw;
+    top: 0%;
+  }
+
+  29% {
+    display: none;
+  }
+
+  100% {
+    display: none;
+    left: 115vw;
+  }
+}
+
+.y-fighter {
+  animation: y-fly 16s linear infinite forwards;
+  animation-delay: 2.2s;
+  left: -20vw;
+  position: absolute;
+  width: 15vw;
+  z-index: 4;
+}
+
+@keyframes y-fly {
+
+  0% {
+    left: -15vw;
+    top: 17vh;
+  }
+
+  28% {
+    left: 115vw;
+    top: 6vh;
+  }
+
+  29% {
+    display: none;
+  }
+
+  100% {
+    display: none;
+    left: 115vw;
+  }
+}
+
+
+.lambda {
+  animation: lambda-fly 16s linear infinite forwards;
+  animation-delay: 8s;
+  left: -25vw;
+  position: absolute;
+  width: 14vw;
+  z-index: 4;
+}
+
+@keyframes lambda-fly {
+
+  0% {
+    left: -25vw;
+    top: -3vh;
+  }
+
+  60% {
+    left: 125vw;
+    top: 2vh;
+  }
+
+  61% {
+    display: none;
+  }
+
+  100% {
+    display: none;
+    left: 125vw;
+  }
+}
+
+@media screen and ( max-width : 850px ) {
+
+  #deathStar {
+    top: 3vh;
+    width: 12vw;
+  }
+
+  .tie-fighter {
+    width: 20vw;
+  }
+
+  .x-fighter {
+    width: 15vw;
+  }
+
+  .y-fighter {
+    width: 23vw;
+  }
+
+  .lambda {
+    width: 25vw;
+  }
+
+
+  @keyframes tie-fly {
+
+    0% {
+      left: -15vw;
+      top: 5%;
+    }
+
+    20% {
+      left: 115vw;
+      top: 25%;
+    }
+
+    21% {
+      display: none;
+    }
+
+    100% {
+      display: none;
+      left: 115vw;
+    }
+  }
+
+
+  @keyframes x-fly {
+
+    0% {
+      left: -15vw;
+      top: 25%;
+    }
+
+    23% {
+      left: 115vw;
+      top: 0%;
+    }
+
+    24% {
+      display: none;
+    }
+
+    100% {
+      display: none;
+      left: 115vw;
+    }
+  }
+
+
+  @keyframes y-fly {
+
+    0% {
+      left: -15vw;
+      top: 17vh;
+    }
+
+    23% {
+      left: 115vw;
+      top: 6vh;
+    }
+
+    24% {
+      display: none;
+    }
+
+    100% {
+      display: none;
+      left: 115vw;
+    }
+  }
+
+
+  @keyframes lambda-fly {
+
+    0% {
+      left: -25vw;
+      top: -3vh;
+    }
+
+    40% {
+      left: 125vw;
+      top: 2vh;
+    }
+
+    41% {
+      display: none;
+    }
+
+    100% {
+      display: none;
+      left: 125vw;
+    }
+  }
+
 }
 

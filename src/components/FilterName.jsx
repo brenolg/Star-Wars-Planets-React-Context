@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 import search from '../images/search.png';
 import './FilterName.css';

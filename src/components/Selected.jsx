@@ -1,8 +1,9 @@
+import propTypes from 'prop-types';
 import { useContext, useEffect, useRef } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 import './Selected.css';
 
-export default function Selected({filterByNumber}) {
+export default function Selected({ filterByNumber }) {
   const { selectedFilters, setSelectedFilters } = useContext(StarWarsContext);
   const selRef = useRef(0);
 
@@ -70,3 +71,7 @@ export default function Selected({filterByNumber}) {
     </section>
   );
 }
+
+Selected.propTypes = {
+  filterByNumber: propTypes.func.isRequired,
+};

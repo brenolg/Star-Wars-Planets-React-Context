@@ -139,19 +139,19 @@
 @keyframes shadow {
 
   0% {
-    box-shadow:0 0 8px  white , inset 0 0 5px yellow, 0 0 1.8rem #fae60a00;
+    box-shadow: 0 0 8px  white , inset 0 0 5px yellow , 0 0 1.8rem #fae60a00;
   }
 
   30% {
-    box-shadow:0 0 8px  rgba(255, 255, 255, 0.477) , inset 0 0 5px rgba(255, 255, 0, 0.459), 0 0 1.8rem #fae60a5b;
+    box-shadow: 0 0 8px  rgba(255, 255, 255, 0.477) , inset 0 0 5px rgba(255, 255, 0, 0.459) , 0 0 1.8rem #fae60a5b;
   }
 
   90% {
-    box-shadow:0 0 8px  rgba(255, 255, 255, 0.204) , inset 0 0 5px rgba(255, 255, 0, 0.204), 0 0 1.8rem #fae60ad7;
+    box-shadow: 0 0 8px  rgba(255, 255, 255, 0.204) , inset 0 0 5px rgba(255, 255, 0, 0.204) , 0 0 1.8rem #fae60ad7;
   }
 
   100% {
-    box-shadow:0 0 8px  white , inset 0 0 5px yellow, 0 0 1.8rem #fae60a;
+    box-shadow: 0 0 8px  white , inset 0 0 5px yellow , 0 0 1.8rem #fae60a;
   }
 }
 

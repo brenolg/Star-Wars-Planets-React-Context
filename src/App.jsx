@@ -6,7 +6,6 @@ import Header from './components/Header';
 import Table from './components/Table';
 
 function App() {
-
   return (
     <>
       <Header />
@@ -16,7 +15,7 @@ function App() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

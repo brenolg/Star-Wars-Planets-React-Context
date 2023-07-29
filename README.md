@@ -25,6 +25,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 # Tecnologias Utilizadas
 
 * React
+* Vite
 * JavaScript
 * Filtros em JavaScript
 * Context API

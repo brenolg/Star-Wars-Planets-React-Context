@@ -1,20 +1,20 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import App from '../App';
-import mockPlanets from '../helpers/mockPlanets';
-import StarWarsProvider from '../context/StarWarsProvider';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
 import { act } from 'react-dom/test-utils';
+import App from '../App';
+import StarWarsProvider from '../context/StarWarsProvider';
+import mockPlanets from '../helpers/mockPlanets';
 
 describe('Teste FilterName', () => {
   test('Testa se ao escrever Kamino é renderizado somente o planeta Kamino', async () => {
     global.fetch = jest.fn(async () => ({
       json: async () => mockPlanets
     }));
-    
+
     act(() => {
       render(
-       <StarWarsProvider> 
+      <StarWarsProvider>
         <App />
       </StarWarsProvider> )
     });
