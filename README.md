@@ -1,6 +1,6 @@
 # Projeto Star Wars Planets
 
-Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stack da Trybe. O objetivo do projeto é criar uma aplicação web que permite ao usuário buscar planetas do universo Star Wars através da API pública disponibilizada pela Lucasfilm Ltd. Foram utilizados filtros em JavaScript para manipular e apresentar os dados dos planetas na aplicação, além dos hooks useState e useEffect do React para gerenciar o estado da aplicação. A Context API do React foi utilizada para permitir o compartilhamento de informações entre componentes da aplicação.
+Este é uma aplicação web que permite ao usuário buscar planetas do universo Star Wars através da API pública disponibilizada pela Lucasfilm Ltd. Foram utilizados filtros em JavaScript para manipular e apresentar os dados dos planetas na aplicação, além dos hooks useState e useEffect do React para gerenciar o estado da aplicação. A Context API do React foi utilizada para permitir o compartilhamento de informações entre componentes da aplicação.
 
 <br/>
 
@@ -37,7 +37,7 @@ Este é um projeto desenvolvido durante o curso de Desenvolvimento Web Full-Stac
 * PropTypes
 ## Instalação do projeto localmente
 
-Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/Star-Wars-Planets/).
+Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/Star-Wars-Planets-React-Context/).
 
 Caso queira rodar local mesmo assim, siga o tutorial abaixo.
 
@@ -50,29 +50,37 @@ Após cada um dos passos, haverá um exemplo do comando a ser digitado para faze
 2. Entre no diretório que acabou de criar e depois clone o projeto:
 ```javascript
   cd projetos
-  git clone git@github.com:brenolg/Star-Wars-Planets.git
+  git@github.com:brenolg/Star-Wars-Planets-React-Context.git
 ```
-3. Acesse o diretório do projeto e depois utilize o comando npm i para instalar todas as dependências necessárias:
+3. Acesse o diretório do projeto e depois utilize o comando npm install para instalar todas as dependências necessárias:
 ```javascript
-  cd Star-Wars-Planets
-  npm i
+  cd Star-Wars-Planets-Planets-React-Context
+  npm install
 ```
-4. Por último, rode o comando npm start e acesse o projeto via browser, no caminho http://localhost:3000/star-wars-planets.
+
+4. Inicie o servidor local com o comando
+```javascript
+ npm run dev
+```
+Abra o navegador e acesse [http://localhost:3000/star-wars-planets.](http://localhost:5173/Star-Wars-Planets-React-Context)
+
 ---
 
 # Requisitos do Projeto
 
 1. Utilizar React e Context API para gerenciar o estado da aplicação
-2. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas
-3. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista
-4. Permitir que o usuário pesquise planetas pelo nome
-5. Permitir que o usuário pesquise planetas por múltiplos valores numéricos
-6. Não permitir pesquisar por filtros numéricos repetidos
-7. Exibir um botão que possibilita deletar um filtro de valor numérico ao clicar
-8. Exibir um botão que possibilita deletar todas filtragens numéricas simultaneamente ao clicar
-9. Quando não houver mais filtros disponíveis o botão ficará desabilitado
-10. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
-11. Implementar testes utilizando o framework Jest
+2. Possuir um layout responsivo tanto para desktop, tablet e mobile
+3. Utilizar keyframes para gerar animação de naves no header
+4. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas
+5. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista
+6. Permitir que o usuário pesquise planetas pelo nome
+7. Permitir que o usuário pesquise planetas por múltiplos valores numéricos
+8. Não permitir pesquisar por filtros numéricos repetidos
+9. Exibir um botão que possibilita deletar um filtro de valor numérico ao clicar
+10. Exibir um botão que possibilita deletar todas filtragens numéricas simultaneamente ao clicar
+11. Quando não houver mais filtros disponíveis o botão ficará desabilitado
+12. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
+13. Implementar testes utilizando o framework Jest
 
 # Agradecimentos
 
