@@ -10,7 +10,8 @@ header {
 }
 
 #starWars {
-  height: 20vh;
+  max-height: 20vh;
+  max-width: 90%;
   z-index: 3;
 }
 
@@ -167,6 +168,11 @@ header {
 
 @media screen and ( max-width : 850px ) {
 
+  #ships {
+    transform: translate(12%, 35%);
+  }
+
+
   #deathStar {
     top: 3vh;
     width: 12vw;
@@ -216,12 +222,12 @@ header {
 
     0% {
       left: -15vw;
-      top: 25%;
+      top: 12%;
     }
 
     23% {
       left: 115vw;
-      top: 0%;
+      top: 25%;
     }
 
     24% {

@@ -1,12 +1,32 @@
 * {
   box-sizing: border-box;
-  font-family: Epilogue , sans-serif;
   margin: 0;
   padding: 0;
 }
 
+
+@font-face {
+  font-family: solo;
+  font-weight: 100 950;
+  src: url('fonts/SoloistStraight-Jqgx.otf') format('truetype');
+}
+
+@font-face {
+  font-family: galaxy;
+  font-weight: 100 950;
+  src: url('fonts/SfDistantGalaxyAlternate-OE4d.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: shock;
+  font-weight: 100 950;
+  src: url('fonts/Typographica-Blp5.ttf') format('truetype');
+}
+
 :root {
+  font-family: shock , sans-serif;
   font-size: 62.5%;
+  letter-spacing: 0.5ch;
 }
 
 body {
@@ -21,6 +41,7 @@ body {
   position: relative;
 }
 
+
 @keyframes transition {
 
   from {
@@ -31,6 +52,7 @@ body {
     opacity: 1;
   }
 }
+
 
 main {
   background: none;
@@ -83,5 +105,5 @@ main ::-webkit-scrollbar-track {
 
 main ::-webkit-scrollbar {
   background: none;
+  width: 1rem;
 }
-

@@ -22,6 +22,8 @@
   align-items: center;
   cursor: pointer;
   display: flex;
+  font-family: galaxy , sans-serif;
+  font-size: 1.3rem;
 }
 
 .radioSort {
@@ -68,7 +70,7 @@
   align-items: flex-end;
   display: flex;
   flex-direction: row;
-  height: 20vh;
+  height: calc(20vh + 2rem);
   justify-content: space-between;
 }
 
@@ -93,10 +95,25 @@
   z-index: 3;
 }
 
+@media screen and ( max-width : 1450px ) {
+
+  #sortForm {
+    padding-left: 6%;
+  }
+}
+
 @media screen and ( max-width : 1350px ) {
 
   #sortForm {
-    padding-left: 8%;
+    padding-left: 4%;
+  }
+}
+
+@media screen and ( max-width : 1320px ) {
+
+  #sortForm {
+    gap: 3rem;
+    justify-content: space-around;
   }
 }
 
@@ -124,7 +141,7 @@
   }
 }
 
-@media screen and ( max-width : 650px ) {
+@media screen and ( max-width : 770px ) {
 
   #sort-section {
     margin-top: 2rem;

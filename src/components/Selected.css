@@ -1,8 +1,9 @@
 #selectedFiltersSection {
   height: 20vh;
+  margin-bottom: 2rem;
   overflow: auto;
   padding-right: 1rem;
-  width: 56%;
+  width: 100%;
 }
 
 .delAllFilters {
@@ -11,11 +12,12 @@
   border-radius: 10px;
   box-shadow: 0 0 2px white , inset 0 0 3px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
   color: rgb(246, 246, 68);
+  font-family: solo , sans-serif;
   font-size: 1.7rem;
   font-weight: 900;
-  letter-spacing: 0.1ch;
+  letter-spacing: 0.2ch;
   margin-bottom: 0.8rem;
-  padding: 1.2rem;
+  padding: 1.1em 1em;
   position: sticky;
   top: 3px;
   transform: translateY(-0.2rem);
@@ -43,10 +45,12 @@
   box-shadow: 0 0 1px white , inset 0 0 1px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
   color: #fae60a;
   cursor: pointer;
+  font-family: galaxy , sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
+  letter-spacing: 0.2ch;
   margin: 3px;
-  padding: 0.8em 1em;
+  padding: 1.1em 1em;
   position: absolute;
   right: 1px;
   transition: all 0.4s  ease-in-out;

@@ -79,6 +79,10 @@ label {
 
 @media screen and ( max-width : 650px ) {
 
+  #search {
+    width: 1.7rem;
+  }
+
   .labelSort {
     font-size: 1.2rem;
   }
@@ -103,5 +107,26 @@ label {
   #labelName #placeholder {
     left: 1.6rem;
 
+  }
+}
+
+@media screen and ( max-width : 400px ) {
+
+  #search {
+    pointer-events: none;
+    position: absolute;
+    right: 2rem;
+    top: calc(50%);
+    transform: translateY(-50%);
+  }
+
+  #placeholder {
+    max-width: 80%;
+  }
+
+  #labelName input:valid + #placeholder, #labelName input:focus + #placeholder {
+    color: yellow;
+    font-size: 1.6rem;
+    top: -2rem;
   }
 }
