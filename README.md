@@ -70,17 +70,18 @@ Abra o navegador e acesse [http://localhost:3000/star-wars-planets.](http://loca
 
 1. Utilizar React e Context API para gerenciar o estado da aplicação
 2. Possuir um layout responsivo tanto para desktop, tablet e mobile
-3. Utilizar keyframes para gerar animação de naves no header
-4. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas
-5. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista
-6. Permitir que o usuário pesquise planetas pelo nome
-7. Permitir que o usuário pesquise planetas por múltiplos valores numéricos
-8. Não permitir pesquisar por filtros numéricos repetidos
-9. Exibir um botão que possibilita deletar um filtro de valor numérico ao clicar
-10. Exibir um botão que possibilita deletar todas filtragens numéricas simultaneamente ao clicar
-11. Quando não houver mais filtros disponíveis o botão ficará desabilitado
-12. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
-13. Implementar testes utilizando o framework Jest
+3. Eleentos html completamente customizados
+4. Utilizar keyframes para gerar animação de naves no header
+5. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas
+6. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista
+7. Permitir que o usuário pesquise planetas pelo nome
+8. Permitir que o usuário pesquise planetas por múltiplos valores numéricos
+9. Não permitir pesquisar por filtros numéricos repetidos
+10. Exibir um botão que possibilita deletar um filtro de valor numérico ao clicar
+11. Exibir um botão que possibilita deletar todas filtragens numéricas simultaneamente ao clicar
+12. Quando não houver mais filtros disponíveis o botão ficará desabilitado
+13. Permitir que o usuário ordene as colunas de forma ascendente ou descendente
+14. Implementar testes utilizando o framework Jest
 
 # Agradecimentos
 
