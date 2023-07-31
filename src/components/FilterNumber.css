@@ -107,7 +107,7 @@
   opacity: 50%;
 }
 
-@media screen and ( max-width : 1250px ) {
+@media screen and ( max-width : 1350px ) {
 
   #numberSelectedSection {
     margin: auto;
@@ -116,7 +116,7 @@
 
   #filterNumberForm {
     gap: 1.5rem;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 3rem;
   }
 }

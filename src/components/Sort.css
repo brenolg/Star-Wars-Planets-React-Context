@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: 15vh;
-  padding-left: 12%;
+  padding-left: 11%;
   width: 100%;
 }
 
@@ -20,6 +20,7 @@
 
 .labelSort {
   align-items: center;
+  background: black;
   cursor: pointer;
   display: flex;
   font-family: galaxy , sans-serif;
@@ -102,14 +103,14 @@
   }
 }
 
-@media screen and ( max-width : 1350px ) {
+@media screen and ( max-width : 1430px ) {
 
   #sortForm {
     padding-left: 4%;
   }
 }
 
-@media screen and ( max-width : 1320px ) {
+@media screen and ( max-width : 1370px ) {
 
   #sortForm {
     gap: 3rem;
@@ -117,7 +118,7 @@
   }
 }
 
-@media screen and ( max-width : 1250px ) {
+@media screen and ( max-width : 1350px ) {
 
   #sort-section {
     margin-bottom: 3rem;

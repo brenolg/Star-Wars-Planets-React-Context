@@ -106,7 +106,6 @@ label {
 
   #labelName #placeholder {
     left: 1.6rem;
-
   }
 }
 
@@ -126,7 +125,7 @@ label {
 
   #labelName input:valid + #placeholder, #labelName input:focus + #placeholder {
     color: yellow;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     top: -2rem;
   }
 }

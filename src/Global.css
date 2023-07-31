@@ -41,7 +41,6 @@ body {
   position: relative;
 }
 
-
 @keyframes transition {
 
   from {
@@ -52,7 +51,6 @@ body {
     opacity: 1;
   }
 }
-
 
 main {
   background: none;
@@ -81,13 +79,13 @@ button {
 
 ::-webkit-scrollbar {
   background: black;
+  height: 1rem;
   width: 1rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: gray;
+  background-color: grey;
   border-radius: 3rem;
-  box-shadow: inset 0 0 1.2rem white;
   transition: all 0.4s ease-in-out;
 }
 
@@ -105,5 +103,4 @@ main ::-webkit-scrollbar-track {
 
 main ::-webkit-scrollbar {
   background: none;
-  width: 1rem;
 }

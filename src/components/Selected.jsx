@@ -9,7 +9,7 @@ export default function Selected({ filterByNumber }) {
 
   const handleVisibility = () => {
     if (selRef.current !== 0 && selRef.current !== null) {
-      selRef.current.className = 'selectedFilterDiv visible';
+      selRef.current.className = 'visible selectedFilterDiv';
     }
   };
   // Permite a visibilidade dos filtros selecionados

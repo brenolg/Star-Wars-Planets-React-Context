@@ -56,12 +56,12 @@
 }
 
 .label-select {
+  background: black;
   font-family: galaxy , sans-serif;
   letter-spacing: 0.2ch;
   margin-left: 1rem;
   transition: all 0.3s ease-in-out;
 }
-
 
 .arrow-select {
   bottom: 50%;
@@ -77,10 +77,10 @@
   border-radius: 1rem;
   box-shadow: 0 0 3px white , inset 0 0 5px rgba(255, 255, 255, 0.505) , 0 0 8px transparent;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 900;
   margin-top: 1rem;
-  min-width: 16.5rem;
+  min-width: 18.5rem;
   padding: 1em;
   position: relative;
   transition: all 0.5s  ease-in-out;
@@ -92,7 +92,7 @@
   box-shadow: 0 0 2px white , inset 0 0 3px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
   color: white;
   font-family: shock , sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   letter-spacing: 0.3ch;
   padding: 0.8em 1em;
   position: relative;
@@ -196,7 +196,6 @@
   }
 
   .dropdown {
-    margin: auto;
     margin-bottom: 3rem;
     width: 45%;
   }

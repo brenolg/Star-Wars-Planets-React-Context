@@ -1,3 +1,5 @@
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect, useState } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 import atat from '../images/atat.png';
@@ -46,6 +48,10 @@ export default function Sort() {
             className="dropdown-select  "
           >
             { columnSort }
+            <FontAwesomeIcon
+              icon={ faChevronDown }
+              className="arrow-select"
+            />
 
           </div>
           <div className="dropdown-list">
