@@ -37,7 +37,7 @@ Este é uma aplicação web que permite ao usuário buscar planetas do universo 
 * PropTypes
 ## Instalação do projeto localmente
 
-Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/Star-Wars-Planets/).
+Não é necessário rodar o projeto localmente para ver o jogo rodando, pois ele está rodando nesse [link](https://brenolg.github.io/Star-Wars-Planets-React-Context/).
 
 Caso queira rodar local mesmo assim, siga o tutorial abaixo.
 
