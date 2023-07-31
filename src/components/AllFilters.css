@@ -31,7 +31,7 @@
 
 .dropdown {
   color: white;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 900;
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -56,8 +56,19 @@
 }
 
 .label-select {
+  background: black;
+  font-family: galaxy , sans-serif;
+  letter-spacing: 0.2ch;
   margin-left: 1rem;
   transition: all 0.3s ease-in-out;
+}
+
+.arrow-select {
+  bottom: 50%;
+  color: yellow;
+  position: absolute;
+  right: 0;
+  transform: translate(-80%, 50%);
 }
 
 .dropdown-select {
@@ -66,10 +77,10 @@
   border-radius: 1rem;
   box-shadow: 0 0 3px white , inset 0 0 5px rgba(255, 255, 255, 0.505) , 0 0 8px transparent;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 900;
   margin-top: 1rem;
-  min-width: 16.5rem;
+  min-width: 18.5rem;
   padding: 1em;
   position: relative;
   transition: all 0.5s  ease-in-out;
@@ -80,9 +91,10 @@
   border: 1px solid white;
   box-shadow: 0 0 2px white , inset 0 0 3px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
   color: white;
-  font-size: 1.5rem;
-  font-weight: 900;
-  padding: 1rem;
+  font-family: shock , sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.3ch;
+  padding: 0.8em 1em;
   position: relative;
   text-align: start;
   transition: all 0.1s ease-in-out;
@@ -117,10 +129,10 @@
   box-shadow: 0 0 5px white , inset 0 0 5px rgba(255, 255, 0, 0.505);
   color: rgb(249, 249, 37);
   cursor: pointer;
-  font-size: 1.6rem;
-  font-weight: 900;
-  height: 6.5rem;
-  letter-spacing: 0.1ch;
+  font-family: galaxy , sans-serif;
+  font-size: 1.4rem;
+  height: 6.6rem;
+  letter-spacing: 0.3ch;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
@@ -139,10 +151,19 @@
 @keyframes shadow {
 
   0% {
-    box-shadow: 0 0 1.5rem #fae60a00;}
+    box-shadow: 0 0 8px  white , inset 0 0 5px yellow , 0 0 1.8rem #fae60a00;
+  }
+
+  30% {
+    box-shadow: 0 0 8px  rgba(255, 255, 255, 0.477) , inset 0 0 5px rgba(255, 255, 0, 0.459) , 0 0 1.8rem #fae60a5b;
+  }
+
+  90% {
+    box-shadow: 0 0 8px  rgba(255, 255, 255, 0.204) , inset 0 0 5px rgba(255, 255, 0, 0.204) , 0 0 1.8rem #fae60ad7;
+  }
 
   100% {
-    box-shadow: 0 0 1.5rem #fae60a;
+    box-shadow: 0 0 8px  white , inset 0 0 5px yellow , 0 0 1.8rem #fae60a;
   }
 }
 
@@ -175,7 +196,6 @@
   }
 
   .dropdown {
-    margin: auto;
     margin-bottom: 3rem;
     width: 45%;
   }

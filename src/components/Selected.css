@@ -1,8 +1,10 @@
 #selectedFiltersSection {
   height: 20vh;
+  margin-bottom: 2rem;
   overflow: auto;
   padding-right: 1rem;
-  width: 56%;
+  width: 100%;
+
 }
 
 .delAllFilters {
@@ -11,14 +13,15 @@
   border-radius: 10px;
   box-shadow: 0 0 2px white , inset 0 0 3px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
   color: rgb(246, 246, 68);
-  font-size: 1.7rem;
+  font-family: solo , sans-serif;
+  font-size: 1.6rem;
   font-weight: 900;
-  letter-spacing: 0.1ch;
+  letter-spacing: 0.2ch;
   margin-bottom: 0.8rem;
-  padding: 1.2rem;
+  padding: 1.1em 1em;
   position: sticky;
   top: 3px;
-  transform: translateY(-0.2rem);
+  transform: translateY(-0.35vh);
   transition: all 0.4s ease-in-out;
   width: 100%;
   z-index: 3;
@@ -30,38 +33,42 @@
   display: flex;
   flex-direction: row;
   font-size: 1.6rem;
-  font-weight: 900;
-  padding: 2.1rem 0 2.1rem 0.5rem;
-  position: relative;
+  justify-content: space-between;
+  padding: 1rem 0;
   transition: all 0.6s ease-in-out;
+}
+
+.selectedFilterDiv span {
+  background: black;
+  margin: 1rem 0;
+  padding: 0 1rem 0 0;
 }
 
 .delFilterBtn {
   background: black;
   border: 1px solid #fae60a;
-  border-radius: 10px;
-  box-shadow: 0 0 2px white , inset 0 0 3px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px white , inset 0 0 1px white , 0 0 6px transparent , 0 0 12px transparent , inset 0 0 3px transparent;
   color: #fae60a;
   cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: 900;
-  padding: 0.8em 1em;
-  position: absolute;
-  right: 1px;
+  font-family: galaxy , sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.2ch;
+  margin: 3px;
+  margin-left: auto;
+  padding: 1.1em 1em;
   transition: all 0.4s  ease-in-out;
 }
 
-.delFilterBtn:hover, .delAllFilters:hover {
+.delFilterBtn:hover {
   background: #121314;
   box-shadow: 0 0 5px  white , inset 0 0 5px yellow;
   color: yellow;
 }
 
-@media screen and ( max-width : 1250px ) {
-
-  #selectedFiltersSection {
-    margin: auto;
-    width: 100%;
-  }
+.delAllFilters:hover {
+  background: #121314;
+  box-shadow: 0 0 3px white , inset 0 0 5px yellow;
+  color: yellow;
 }
 

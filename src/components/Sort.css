@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: 15vh;
-  padding-left: 12%;
+  padding-left: 11%;
   width: 100%;
 }
 
@@ -20,8 +20,11 @@
 
 .labelSort {
   align-items: center;
+  background: black;
   cursor: pointer;
   display: flex;
+  font-family: galaxy , sans-serif;
+  font-size: 1.3rem;
 }
 
 .radioSort {
@@ -68,7 +71,7 @@
   align-items: flex-end;
   display: flex;
   flex-direction: row;
-  height: 20vh;
+  height: calc(20vh + 2rem);
   justify-content: space-between;
 }
 
@@ -89,18 +92,33 @@
 #ship {
   max-height: 100%;
   max-width: 12%;
-  transform: translate(-25%, -172%);
+  transform: translate(-85%, -262%);
   z-index: 3;
 }
 
-@media screen and ( max-width : 1350px ) {
+@media screen and ( max-width : 1450px ) {
 
   #sortForm {
-    padding-left: 8%;
+    padding-left: 6%;
   }
 }
 
-@media screen and ( max-width : 1250px ) {
+@media screen and ( max-width : 1430px ) {
+
+  #sortForm {
+    padding-left: 4%;
+  }
+}
+
+@media screen and ( max-width : 1370px ) {
+
+  #sortForm {
+    gap: 3rem;
+    justify-content: space-around;
+  }
+}
+
+@media screen and ( max-width : 1350px ) {
 
   #sort-section {
     margin-bottom: 3rem;
@@ -124,7 +142,7 @@
   }
 }
 
-@media screen and ( max-width : 650px ) {
+@media screen and ( max-width : 770px ) {
 
   #sort-section {
     margin-top: 2rem;

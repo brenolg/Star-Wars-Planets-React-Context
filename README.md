@@ -70,7 +70,7 @@ Abra o navegador e acesse [http://localhost:3000/star-wars-planets.](http://loca
 
 1. Utilizar React e Context API para gerenciar o estado da aplicação
 2. Possuir um layout responsivo tanto para desktop, tablet e mobile
-3. Ultilizar keyframes para gerar animação de naves no header
+3. Utilizar keyframes para gerar animação de naves no header
 4. Utilizar a API pública de planetas da Lucasfilm Ltd para obter os dados dos planetas
 5. Exibir uma lista com todos os planetas da API e permitir que o usuário visualize as informações de cada planeta da lista
 6. Permitir que o usuário pesquise planetas pelo nome

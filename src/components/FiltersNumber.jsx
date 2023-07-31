@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect, useState } from 'react';
@@ -140,7 +141,12 @@ export default function FiltersNumber() {
             { filter.column !== undefined
               ? filter.column
               : noFilter }
+            <FontAwesomeIcon
+              icon={ faChevronDown }
+              className="arrow-select"
+            />
           </div>
+
           <div
             className="dropdown-list"
           >
@@ -169,6 +175,10 @@ export default function FiltersNumber() {
             className="dropdown-select   "
           >
             { filter.comparison }
+            <FontAwesomeIcon
+              icon={ faChevronDown }
+              className="arrow-select"
+            />
           </div>
           <div
             className="dropdown-list"
@@ -244,7 +254,7 @@ export default function FiltersNumber() {
           {showTextButton(disabledButton)}
         </button>
       </form>
-      <Selected />
+      <Selected filterByNumber={ filterByNumber } />
     </section>
   );
 }

@@ -1,14 +1,15 @@
+import propTypes from 'prop-types';
 import { useContext, useEffect, useRef } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 import './Selected.css';
 
-export default function Selected() {
+export default function Selected({ filterByNumber }) {
   const { selectedFilters, setSelectedFilters } = useContext(StarWarsContext);
   const selRef = useRef(0);
 
   const handleVisibility = () => {
     if (selRef.current !== 0 && selRef.current !== null) {
-      selRef.current.className = 'selectedFilterDiv visible';
+      selRef.current.className = 'visible selectedFilterDiv';
     }
   };
   // Permite a visibilidade dos filtros selecionados
@@ -70,3 +71,7 @@ export default function Selected() {
     </section>
   );
 }
+
+Selected.propTypes = {
+  filterByNumber: propTypes.func.isRequired,
+};

@@ -20,7 +20,9 @@
   box-shadow: 0 0 5px white , inset 0 0 2.5px white;
   color: white;
   cursor: pointer;
+  font-family: shock , sans-serif;
   font-size: 2rem;
+  letter-spacing: 0.3ch;
   padding: 0.8em;
   position: relative;
   transition: all 0.3s linear;
@@ -46,7 +48,7 @@
 
 #labelName input:valid + #placeholder, #labelName input:focus + #placeholder {
   color: yellow;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   top: -7px;
 }
 
@@ -60,7 +62,7 @@
 
 label {
   color: white;
-  font-size: 1.7rem;
+  font-size: 5rem;
   font-weight: 900;
   padding: 1rem;
 }
@@ -79,8 +81,13 @@ label {
 
 @media screen and ( max-width : 650px ) {
 
-  .labelSort {
-    font-size: 1.2rem;
+  #search {
+    width: 1.7rem;
+  }
+
+  #nameInput {
+    font-size: 1.4rem;
+    padding: 0.6em;
   }
 
   #labelName {
@@ -96,12 +103,29 @@ label {
     padding: 0.6em;
   }
 
-  #nameInput {
-    padding: 0.6em;
-  }
 
   #labelName #placeholder {
     left: 1.6rem;
-
   }
 }
+
+@media screen and ( max-width : 400px ) {
+
+  #search {
+    pointer-events: none;
+    position: absolute;
+    right: 2rem;
+    top: calc(50%);
+    transform: translateY(-50%);
+  }
+
+  #placeholder {
+    max-width: 80%;
+  }
+
+  #labelName input:valid + #placeholder, #labelName input:focus + #placeholder {
+    font-size: 1.4rem;
+    top: -2rem;
+  }
+}
+
