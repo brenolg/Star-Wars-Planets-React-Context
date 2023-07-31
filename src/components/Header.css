@@ -44,7 +44,7 @@ header {
 .tie-fighter {
   animation: tie-fly 16s linear infinite;
   animation-delay: 1s;
-  left: -20vw;
+  left: -30vw;
   position: absolute;
   width: 12vw;
   z-index: 4;
@@ -73,9 +73,9 @@ header {
 }
 
 .x-fighter {
-  animation: x-fly 16s linear infinite forwards;
+  animation: x-fly 16s linear infinite;
   animation-delay: 1.9s;
-  left: -20vw;
+  left: -30vw;
   position: absolute;
   width: 10.5vw;
   z-index: 2;
@@ -104,9 +104,9 @@ header {
 }
 
 .y-fighter {
-  animation: y-fly 16s linear infinite forwards;
+  animation: y-fly 16s linear infinite;
   animation-delay: 2.2s;
-  left: -20vw;
+  left: -30vw;
   position: absolute;
   width: 15vw;
   z-index: 4;
@@ -138,7 +138,7 @@ header {
 .lambda {
   animation: lambda-fly 16s linear infinite forwards;
   animation-delay: 8s;
-  left: -25vw;
+  left: -30vw;
   position: absolute;
   width: 14vw;
   z-index: 4;
