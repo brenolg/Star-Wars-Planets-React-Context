@@ -87,7 +87,7 @@ label {
 
   #nameInput {
     font-size: 1.4rem;
-    padding: 0.6em;
+    padding: 1em;
   }
 
   #labelName {
@@ -103,10 +103,15 @@ label {
     padding: 0.6em;
   }
 
-
   #labelName #placeholder {
     left: 1.6rem;
   }
+
+  #labelName input:valid + #placeholder, #labelName input:focus + #placeholder {
+    font-size: 1.4rem;
+    top: -1.5rem;
+  }
+
 }
 
 @media screen and ( max-width : 400px ) {
